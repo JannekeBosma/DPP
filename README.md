@@ -1,2 +1,2 @@
 # DPP
-Ontology for Digital Product Passports
+An ontology for Digital Product Passports
