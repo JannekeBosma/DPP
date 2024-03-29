@@ -1,0 +1,475 @@
+@prefix : <http://www.semanticweb.org/janneke.bosma/DPP#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/janneke.bosma/DPP#> .
+
+<http://www.semanticweb.org/janneke.bosma/DPP#> rdf:type owl:Ontology ;
+                                                                                  owl:versionIRI <https://www.DPPOntology> ;
+                                                                                  rdfs:comment "An ontology for Digital Product Passports in the AEC industry"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasCircularityPropertySet
+:hasCircularityPropertySet rdf:type owl:ObjectProperty ;
+                           owl:inverseOf :hasConditionAssessment ,
+                                         :hasElement ,
+                                         :hasFutureFunction ,
+                                         :hasLog ,
+                                         :hasMaterial ,
+                                         :hasOrigin ,
+                                         :hasProduct ,
+                                         :hasRecyclingPotential ,
+                                         :hasReusabilityPotential ;
+                           rdfs:domain :element ,
+                                       :material ,
+                                       :product ;
+                           rdfs:range :circularityPropertySet ;
+                           rdfs:comment """Material has a circularity property set
+Product has a circularity property set
+Element has a circularity property set"""@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasClassificationCode
+:hasClassificationCode rdf:type owl:ObjectProperty ;
+                       owl:inverseOf :hasElement ,
+                                     :hasMaterial ,
+                                     :hasProduct ;
+                       rdfs:domain :element ,
+                                   :material ,
+                                   :product .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasConditionAssessment
+:hasConditionAssessment rdf:type owl:ObjectProperty ;
+                        rdfs:domain :circularityPropertySet ,
+                                    :conditionAssessment ;
+                        rdfs:range :conditionAssessment .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasDisassemblyPotential
+:hasDisassemblyPotential rdf:type owl:ObjectProperty ;
+                         rdfs:domain :disassemblyPotential ,
+                                     :recyclingPotential ,
+                                     :reusabilityPotential ;
+                         rdfs:range :disassemblyPotential .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasElement
+:hasElement rdf:type owl:ObjectProperty ;
+            rdfs:range :element .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasExternalParty
+:hasExternalParty rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :hasProofOfReuse ;
+                  rdfs:domain :proofOfReuse ;
+                  rdfs:range :externalParty .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasFutureFunction
+:hasFutureFunction rdf:type owl:ObjectProperty ;
+                   rdfs:domain :circularityPropertySet ,
+                               :futureFuncion ;
+                   rdfs:range :futureFuncion .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasLog
+:hasLog rdf:type owl:ObjectProperty ;
+        owl:inverseOf :hasOwner ;
+        rdfs:domain :circularityPropertySet ;
+        rdfs:range :log .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasMaterial
+:hasMaterial rdf:type owl:ObjectProperty ;
+             owl:inverseOf :hasProduct ;
+             rdfs:domain :product ;
+             rdfs:range :material ;
+             rdfs:comment "Product has a material"@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasOrigin
+:hasOrigin rdf:type owl:ObjectProperty ;
+           rdfs:domain :circularityPropertySet ;
+           rdfs:range :origin ;
+           rdfs:comment "Circularity property set consist of origin"@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasOwner
+:hasOwner rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :log ;
+          rdfs:range :owner .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasProduct
+:hasProduct rdf:type owl:ObjectProperty ;
+            rdfs:domain :element ;
+            rdfs:range :product ;
+            rdfs:comment "Element has a product"@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasProofOfReuse
+:hasProofOfReuse rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :hasRecyclingPotential ;
+                 rdfs:domain :recyclingPotential ,
+                             :reusabilityPotential ;
+                 rdfs:range :proofOfReuse ;
+                 rdfs:comment """Recycling potential consist of assurance
+Reusability potential consist of assurance"""@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasRawMaterial
+:hasRawMaterial rdf:type owl:ObjectProperty ;
+                rdfs:domain :material ;
+                rdfs:range :rawMaterial .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasRecyclingPotential
+:hasRecyclingPotential rdf:type owl:ObjectProperty ;
+                       rdfs:domain :circularityPropertySet ,
+                                   :recyclingPotential ;
+                       rdfs:range :recyclingPotential .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasReusabilityPotential
+:hasReusabilityPotential rdf:type owl:ObjectProperty ;
+                         rdfs:domain :circularityPropertySet ,
+                                     :reusabilityPotential ;
+                         rdfs:range :reusabilityPotential .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasAngle
+:hasAngle rdf:type owl:DatatypeProperty ;
+          rdfs:domain :element ,
+                      :product ;
+          rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasClassificationCode
+:hasClassificationCode rdf:type owl:DatatypeProperty ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasCompletionDate
+:hasCompletionDate rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :element ,
+                               :material ,
+                               :product ;
+                   rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasConditionAssessment
+:hasConditionAssessment rdf:type owl:DatatypeProperty ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasCountryOrigin
+:hasCountryOrigin rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :origin ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasCriticality
+:hasCriticality rdf:type owl:DatatypeProperty ;
+                rdfs:domain :rawMaterial ;
+                rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasDecompositionLevel
+:hasDecompositionLevel rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :element ,
+                                   :material ,
+                                   :product ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasDensity
+:hasDensity rdf:type owl:DatatypeProperty ;
+            rdfs:domain :material ,
+                        :product ;
+            rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasDescription
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:domain :disassemblyPotential ,
+                            :element ,
+                            :material ,
+                            :product ,
+                            :proofOfReuse ;
+                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasDisassemblyPotential
+:hasDisassemblyPotential rdf:type owl:DatatypeProperty ;
+                         rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasEmbodiedEnergy
+:hasEmbodiedEnergy rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :recyclingPotential ,
+                               :reusabilityPotential ;
+                   rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasFutureFunction
+:hasFutureFunction rdf:type owl:DatatypeProperty ;
+                   rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasGuid
+:hasGuid rdf:type owl:DatatypeProperty ;
+         rdfs:domain :circularityPropertySet ,
+                     :conditionAssessment ,
+                     :disassemblyPotential ,
+                     :element ,
+                     :externalParty ,
+                     :futureFuncion ,
+                     :log ,
+                     :material ,
+                     :origin ,
+                     :owner ,
+                     :product ,
+                     :proofOfReuse ,
+                     :rawMaterial ,
+                     :recyclingPotential ,
+                     :reusabilityPotential ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasHeight
+:hasHeight rdf:type owl:DatatypeProperty ;
+           rdfs:domain :element ,
+                       :material ,
+                       :product ;
+           rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasLastUpdate
+:hasLastUpdate rdf:type owl:DatatypeProperty ;
+               rdfs:domain :conditionAssessment ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasLenght
+:hasLenght rdf:type owl:DatatypeProperty ;
+           rdfs:domain :element ,
+                       :material ,
+                       :product ;
+           rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasLinkDatabase
+:hasLinkDatabase rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :log ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :circularityPropertySet ,
+                     :element ,
+                     :externalParty ,
+                     :material ,
+                     :owner ,
+                     :product ,
+                     :rawMaterial ;
+         rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasProofAvailable
+:hasProofAvailable rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :proofOfReuse ;
+                   rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasRecyclingPotential
+:hasRecyclingPotential rdf:type owl:DatatypeProperty ;
+                       rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasReusabilityPotential
+:hasReusabilityPotential rdf:type owl:DatatypeProperty ;
+                         rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasServicelife
+:hasServicelife rdf:type owl:DatatypeProperty ;
+                rdfs:domain :element ,
+                            :material ,
+                            :product ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasVersion
+:hasVersion rdf:type owl:DatatypeProperty ;
+            rdfs:domain :conditionAssessment ,
+                        :log ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasWarranty
+:hasWarranty rdf:type owl:DatatypeProperty ;
+             rdfs:domain :element ,
+                         :material ,
+                         :product ;
+             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasWidth
+:hasWidth rdf:type owl:DatatypeProperty ;
+          rdfs:domain :element ,
+                      :material ,
+                      :product ;
+          rdfs:range xsd:decimal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/ClassificationCode
+:ClassificationCode rdf:type owl:Class ;
+                    rdfs:subClassOf owl:Thing ;
+                    rdfs:comment "Classification code for classifying the building element, products, and materials."@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/circularityPropertySet
+:circularityPropertySet rdf:type owl:Class ;
+                        rdfs:subClassOf :element ,
+                                        :material ,
+                                        :product ;
+                        owl:disjointWith :element .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/conditionAssessment
+:conditionAssessment rdf:type owl:Class ;
+                     rdfs:subClassOf :circularityPropertySet ;
+                     rdfs:comment "Measurement of the condition of the object. This measurement can be made several times during the (different) phase of the object's life"@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/disassemblyPotential
+:disassemblyPotential rdf:type owl:Class ;
+                      rdfs:subClassOf :recyclingPotential ,
+                                      :reusabilityPotential ;
+                      owl:disjointWith :proofOfReuse ;
+                      rdfs:comment "The potential of the object being disassembled."@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/element
+:element rdf:type owl:Class ;
+         rdfs:subClassOf owl:Thing ;
+         rdfs:comment "The (abstract) parts of a (building) work that are distinguished solely on the basis of a desired function"@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/externalParty
+:externalParty rdf:type owl:Class ;
+               rdfs:subClassOf :proofOfReuse .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/futureFuncion
+:futureFuncion rdf:type owl:Class ;
+               rdfs:subClassOf :circularityPropertySet ;
+               rdfs:comment "The function the object may occupy in the future"@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/log
+:log rdf:type owl:Class ;
+     rdfs:subClassOf :circularityPropertySet .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/material
+:material rdf:type owl:Class ;
+          rdfs:subClassOf :product ,
+                          owl:Thing ;
+          rdfs:comment "The processed raw material used for the manufacture of construction products"@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/origin
+:origin rdf:type owl:Class ;
+        rdfs:subClassOf :circularityPropertySet ;
+        rdfs:comment "The country of origin of the object"@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/owner
+:owner rdf:type owl:Class ;
+       rdfs:subClassOf :log ;
+       rdfs:comment "Responsible person for the log"@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/product
+:product rdf:type owl:Class ;
+         rdfs:subClassOf :element ,
+                         owl:Thing ;
+         rdfs:comment "products that are delivered to the construction site and are part of an element after processing. In the case of prefabrication, products are already manufactured into elements before they are delivered to the construction site."@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/proofOfReuse
+:proofOfReuse rdf:type owl:Class ;
+              rdfs:subClassOf :recyclingPotential ,
+                              :reusabilityPotential .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/rawMaterial
+:rawMaterial rdf:type owl:Class ;
+             rdfs:subClassOf :material ;
+             rdfs:comment "The raw, unprocessed fabric. Fossil raw materials are made into materials by an artificial process, which cannot easily be returned to the original raw material."@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/recyclingPotential
+:recyclingPotential rdf:type owl:Class ;
+                    rdfs:subClassOf :circularityPropertySet ;
+                    rdfs:comment "When the object is reused and therefore loses its original purpose, it is stated as recycling (no waste disposal). The potential is given in kg of the object being recycled and the energy (mJ) used to recycle the object (embodied energy)."@en .
+
+
+###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/reusabilityPotential
+:reusabilityPotential rdf:type owl:Class ;
+                      rdfs:subClassOf :circularityPropertySet ;
+                      rdfs:comment "When reusing the object minimal changes are made. The object will keep the same function. The potential is given in kg of the object being reused and the energy (mJ) used to reuse the object (embodied energy)."@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:hasConditionAssessment rdfs:comment "Circularity property set consist of a condition assessment"@en .
+
+
+:hasDisassemblyPotential rdfs:comment """Recycling potential consist of a disassembly potential
+Reusability potential consist of a disassembly potential"""@en .
+
+
+:hasFutureFunction rdfs:comment "Circularity property set consist of a future function"@en .
+
+
+:hasRecyclingPotential rdfs:comment "Circularity property set consist of a recycling potential"@en .
+
+
+:hasReusabilityPotential rdfs:comment "Circularity property set consist of a reusability potential"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :conditionAssessment
+                :futureFuncion
+                :origin
+                :recyclingPotential
+                :reusabilityPotential
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
