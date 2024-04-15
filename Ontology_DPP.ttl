@@ -4,9 +4,9 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/janneke.bosma/DPP#> .
+@base <http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/> .
 
-<http://www.semanticweb.org/janneke.bosma/DPP#> rdf:type owl:Ontology ;
+<http://www.semanticweb.org/janneke.bosma/DPP#> rdf:type owl:Ontology ;rdf:type owl:Ontology ;
                                                                                   owl:versionIRI <https://www.DPPOntology> ;
                                                                                   rdfs:comment "An ontology for Digital Product Passports in the AEC industry"@en .
 
@@ -165,7 +165,8 @@ Reusability potential consist of assurance"""@en .
                    rdfs:domain :element ,
                                :material ,
                                :product ;
-                   rdfs:range xsd:dateTime .
+                   rdfs:range xsd:dateTime ;
+                   rdfs:comment "PROV ontology - a prov entity"@en .
 
 
 ###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasConditionAssessment
@@ -252,7 +253,8 @@ Reusability potential consist of assurance"""@en .
            rdfs:domain :element ,
                        :material ,
                        :product ;
-           rdfs:range xsd:decimal .
+           rdfs:range xsd:decimal ;
+           rdfs:comment "hasHeight - QUDT ontology - quantitykind,quantityValue,applicableUnit, unit"@en .
 
 
 ###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasLastUpdate
@@ -266,7 +268,8 @@ Reusability potential consist of assurance"""@en .
            rdfs:domain :element ,
                        :material ,
                        :product ;
-           rdfs:range xsd:decimal .
+           rdfs:range xsd:decimal ;
+           rdfs:comment "hasLenght - QUDT ontology - quantitykind,quantityValue,applicableUnit, unit" .
 
 
 ###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/hasLinkDatabase
@@ -331,7 +334,8 @@ Reusability potential consist of assurance"""@en .
           rdfs:domain :element ,
                       :material ,
                       :product ;
-          rdfs:range xsd:decimal .
+          rdfs:range xsd:decimal ;
+          rdfs:comment "hasWidth - QUDT ontology - quantitykind,quantityValue,applicableUnit, unit"@en .
 
 
 #################################################################
@@ -348,8 +352,7 @@ Reusability potential consist of assurance"""@en .
 :circularityPropertySet rdf:type owl:Class ;
                         rdfs:subClassOf :element ,
                                         :material ,
-                                        :product ;
-                        owl:disjointWith :element .
+                                        :product .
 
 
 ###  http://www.semanticweb.org/janneke.bosma/ontologies/2024/1/untitled-ontology-4/conditionAssessment
@@ -441,6 +444,9 @@ Reusability potential consist of assurance"""@en .
 #################################################################
 #    Annotations
 #################################################################
+
+:hasClassificationCode rdfs:comment "NEN2767-4 or NLSfB. Consist of a code and decomposition level" .
+
 
 :hasConditionAssessment rdfs:comment "Circularity property set consist of a condition assessment"@en .
 
