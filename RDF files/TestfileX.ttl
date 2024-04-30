@@ -1,0 +1,843 @@
+# This test file is based on the work of Julia Kaltenegger (TU/e). (Some info is deleted from the original file) 
+# baseURI: http://linkedbuildingdata.net/ifc/resources20240415_100608/
+@prefix inst: <http://linkedbuildingdata.net/ifc/resources20240415_100608/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix bot:  <https://w3id.org/bot#> .
+@prefix beo:  <https://pi.pauwel.be/voc/buildingelement#> .
+@prefix mep:  <https://pi.pauwel.be/voc/distributionelement#> .
+@prefix geom:  <https://w3id.org/geom#> .
+@prefix props:  <https://w3id.org/props#> .
+@prefix dpp: <https://jannekebosma.com/dpp#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix bcao: <https://github.com/linmor-sys/BCAO.owl#> . 
+@prefix bpo: <https://w3id.org/bpo#> .
+@prefix bmp: <https://w3id.org/bmp#> . 
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+
+inst: rdf:type <http://www.w3.org/2002/07/owl#Ontology> .
+
+
+inst:site_134
+	a bot:Site ;
+	rdfs:label "Default"^^xsd:string ;
+	bot:hasGuid "4d0b1bb7555b43e1b5fc8d366f89076c"^^xsd:string ;
+	props:hasCompressedGuid "1D2nktLLj3uRNyZJPlYGTi"^^xsd:string ;
+	bot:hasBuilding inst:building_100 ;
+	props:Category "Project Information"^^xsd:string ;
+	props:Bimsync_Issueboard_Id "f4e94f98-662d-4bce-a0cc-488a95e8825e"^^xsd:string ;
+	props:Bimsync_Project_Id "0e57085cd089412091f75b5265f7bba6"^^xsd:string ;
+	props:BuildingName "Standaard projecttemplate"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Adres "Oosteindestraat 15B"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Bedrijfsnaam "Witas Ingenieursbureau bvba"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Email "wim@witas.be"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Fax "nvt"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Plaats "Lokeren"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Postcode "9160"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Telefoonnummer "+32 9 348 53 62"^^xsd:string ;
+	props:Nlrs_C_Opdrachtgever_Adres "De Papiermaker 22"^^xsd:string ;
+	props:Nlrs_C_Opdrachtgever_Contactpersoon "Martijn de Riet"^^xsd:string ;
+	props:Nlrs_C_Opdrachtgever_Email "info@revitgg.nl"^^xsd:string ;
+	props:Nlrs_C_Opdrachtgever_Projectnummer "2012-C006"^^xsd:string ;
+	props:Nlrs_C_Opdrachtgever_Telefoon "+316 24 28 31 75"^^xsd:string ;
+	props:Nlrs_C_Project_Email "wim@witas.be"^^xsd:string ;
+	props:Nlrs_C_Project_Kadaster_Gemeente "GEMEENTE"^^xsd:string ;
+	props:Nlrs_C_Project_Kadaster_Nummer "NUMMER"^^xsd:string ;
+	props:Nlrs_C_Project_Kadaster_Sectie "SECTIE"^^xsd:string ;
+	props:Nlrs_C_Project_Projectleider "Wim Tas"^^xsd:string ;
+	props:Nlrs_C_Project_Telefoon "+32 472 53 52 30"^^xsd:string ;
+	props:OrganizationDescription "Nederlandse Revit GebruikersGroep"^^xsd:string ;
+	props:OrganizationName "RevitGG"^^xsd:string ;
+	props:Category "Project Information"^^xsd:string ;
+	props:ClientName "RevitGG"^^xsd:string ;
+	props:ProjectAddress "De Papiermaker 225283 ZS Boxtel"^^xsd:string ;
+	props:ProjectIssueDate "30-01-2014"^^xsd:string ;
+	props:ProjectName "Dutch Revit Standards"^^xsd:string ;
+	props:ProjectNumber "v.2.0.1"^^xsd:string ;
+	props:ProjectStatus "DEFINITIEF"^^xsd:string . 
+
+inst:building_100
+	a bot:Building ;
+	rdfs:label "Standaard projecttemplate"^^xsd:string ;
+	bot:hasGuid "4d0b1bb7555b43e1b5fc8d366f89076f"^^xsd:string ;
+	props:hasCompressedGuid "1D2nktLLj3uRNyZJPlYGTl"^^xsd:string ;
+	bot:hasStorey inst:storey_104 ;
+	bot:hasStorey inst:storey_107 ;
+	bot:hasStorey inst:storey_115 ;
+	bot:hasStorey inst:storey_123 ;
+	props:Numberofstoreys "4"^^xsd:int ;
+	props:Islandmarked "UNKNOWN"^^xsd:string ;
+	props:Category "Project Information"^^xsd:string ;
+	props:Bimsync_Issueboard_Id "f4e94f98-662d-4bce-a0cc-488a95e8825e"^^xsd:string ;
+	props:Bimsync_Project_Id "0e57085cd089412091f75b5265f7bba6"^^xsd:string ;
+	props:BuildingName "Standaard projecttemplate"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Adres "Oosteindestraat 15B"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Bedrijfsnaam "Witas Ingenieursbureau bvba"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Email "wim@witas.be"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Fax "nvt"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Plaats "Lokeren"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Postcode "9160"^^xsd:string ;
+	props:Nlrs_C_Leverancier_Telefoonnummer "+32 9 348 53 62"^^xsd:string ;
+	props:Nlrs_C_Opdrachtgever_Adres "De Papiermaker 22"^^xsd:string ;
+	props:Nlrs_C_Opdrachtgever_Contactpersoon "Martijn de Riet"^^xsd:string ;
+	props:Nlrs_C_Opdrachtgever_Email "info@revitgg.nl"^^xsd:string ;
+	props:Nlrs_C_Opdrachtgever_Projectnummer "2012-C006"^^xsd:string ;
+	props:Nlrs_C_Opdrachtgever_Telefoon "+316 24 28 31 75"^^xsd:string ;
+	props:OrganizationDescription "Nederlandse Revit GebruikersGroep"^^xsd:string ;
+	props:OrganizationName "RevitGG"^^xsd:string ;
+	props:Category "Project Information"^^xsd:string ;
+	props:ClientName "RevitGG"^^xsd:string ;
+	props:ProjectAddress "De Papiermaker 225283 ZS Boxtel"^^xsd:string ;
+	props:ProjectIssueDate "30-01-2014"^^xsd:string ;
+	props:ProjectName "Dutch Revit Standards"^^xsd:string ;
+	props:ProjectNumber "v.2.0.1"^^xsd:string ;
+	props:ProjectStatus "DEFINITIEF"^^xsd:string ;
+	dpp:hasServicelife "50"^^xsd:integer ; #
+	rdfs:hasDescription "terraced house"^^xsd:string ;  #
+	prov:hasCompletionDate "2014-11-11T15:30:00"^^xsd:dateTime ; #
+	dpp:hasClassificationCode inst:ObjectNEN2767_4_001 . 
+
+#NEN2767_4 object.......................................................................................................................................
+
+inst:ObjectNEN2767_4_001
+    a dpp:classificationCode ;
+    dpp:hasClassificationCode "AQ"^^xsd:string ; #
+	dpp:hasDecompositionLevel "BO"^^xsd:string . #
+#............................................................................................................................... 
+
+inst:storey_104
+	a bot:Storey ;
+	rdfs:label "00_LE"^^xsd:string ;
+	bot:hasGuid "e16d5b769d45472684325c88e0b9743a"^^xsd:string ;
+	props:hasCompressedGuid "3XRLjsdKL79eGoN8ZWkNGw"^^xsd:string ;
+	bot:containsElement inst:element_5433 ;
+	bot:containsElement inst:element_5673 ;
+	bot:containsElement inst:element_6218 ;
+	bot:containsElement inst:element_6426 ;
+	bot:containsElement inst:element_6577 ;
+	bot:containsElement inst:element_6946 ;
+	bot:containsElement inst:element_10582 ;
+	bot:containsElement inst:element_13002 ;
+	bot:containsElement inst:element_13082 ;
+	props:Name "00_LE"^^xsd:string ;
+	props:Aboveground "UNKNOWN"^^xsd:string ;
+	props:Name "00_LE"^^xsd:string ;
+	props:Category "Levels"^^xsd:string ;
+	props:Elevation "-300.0"^^xsd:double ;
+	props:FamilyName "Level"^^xsd:string . 
+
+inst:storey_107
+	a bot:Storey ;
+	rdfs:label "00_Begane Grond"^^xsd:string ;
+	bot:hasGuid "5ccf6065ab0d40f685719eb109219337"^^xsd:string ;
+	props:hasCompressedGuid "1Sps1bgmr0zeLndh498PCt"^^xsd:string ;
+	bot:hasSpace inst:space_191 ;
+	bot:hasSpace inst:space_312 ;
+	bot:hasSpace inst:space_420 ;
+	bot:hasSpace inst:space_515 ;
+	bot:hasSpace inst:space_1073 ;
+	bot:hasSpace inst:space_1157 ;
+	bot:containsElement inst:element_1329 ;
+	bot:containsElement inst:element_1550 ;
+	bot:containsElement inst:element_1675 ;
+	bot:containsElement inst:element_5563 ;
+	bot:containsElement inst:element_5901 ;
+	bot:containsElement inst:element_6507 ;
+	bot:containsElement inst:element_6692 ;
+	bot:containsElement inst:element_10265 ;
+	bot:containsElement inst:element_10521 ;
+	bot:containsElement inst:element_10669 ;
+	bot:containsElement inst:element_10941 ;
+	bot:containsElement inst:element_11033 ;
+	bot:containsElement inst:element_11089 ;
+	bot:containsElement inst:element_11179 ;
+	bot:containsElement inst:element_11227 ;
+	bot:containsElement inst:element_11270 ;
+	bot:containsElement inst:element_11326 ;
+	bot:containsElement inst:element_11413 ;
+	bot:containsElement inst:element_11457 ;
+	bot:containsElement inst:element_12618 ;
+	bot:containsElement inst:element_18178 ;
+	bot:containsElement inst:element_18504 ;
+	bot:containsElement inst:element_19008 ;
+	bot:containsElement inst:element_20162 ;
+	props:Name "00_Begane Grond"^^xsd:string ;
+	props:Aboveground "UNKNOWN"^^xsd:string ;
+	props:Name "00_Begane Grond"^^xsd:string ;
+	props:Category "Levels"^^xsd:string ;
+	props:FamilyName "Level"^^xsd:string . 
+
+inst:storey_115
+	a bot:Storey ;
+	rdfs:label "01_WV_Eerste Verdieping"^^xsd:string ;
+	bot:hasGuid "f76ffb064277421cb6bfbd7993192b63"^^xsd:string ;
+	props:hasCompressedGuid "3tR$i6GdT27BQ$lNcJ6IjZ"^^xsd:string ;
+	bot:hasSpace inst:space_603 ;
+	bot:hasSpace inst:space_693 ;
+	bot:hasSpace inst:space_778 ;
+	bot:hasSpace inst:space_863 ;
+	bot:hasSpace inst:space_1240 ;
+	bot:containsElement inst:element_1450 ;
+	bot:containsElement inst:element_1766 ;
+	bot:containsElement inst:element_1868 ;
+	bot:containsElement inst:element_1924 ;
+	bot:containsElement inst:element_1980 ;
+	bot:containsElement inst:element_3620 ;
+	bot:containsElement inst:element_5284 ;
+	bot:containsElement inst:element_5326 ;
+	bot:containsElement inst:element_5361 ;
+	bot:containsElement inst:element_10326 ;
+	bot:containsElement inst:element_10431 ;
+	bot:containsElement inst:element_13126 ;
+	bot:containsElement inst:element_18550 ;
+	bot:containsElement inst:element_18963 ;
+	bot:containsElement inst:element_19313 ;
+	bot:containsElement inst:element_19731 ;
+	bot:containsElement inst:element_19788 ;
+	bot:containsElement inst:element_19931 ;
+	bot:containsElement inst:element_20036 ;
+	props:Name "01_WV_Eerste Verdieping"^^xsd:string ;
+	props:Aboveground "UNKNOWN"^^xsd:string ;
+	props:Name "01_WV_Eerste Verdieping"^^xsd:string ;
+	props:Category "Levels"^^xsd:string ;
+	props:Elevation "2700.0"^^xsd:double ;
+	props:FamilyName "Level"^^xsd:string . 
+
+inst:storey_123
+	a bot:Storey ;
+	rdfs:label "02_WV_Tweede Verdieping"^^xsd:string ;
+	bot:hasGuid "1646615f04904ecd8424533d5b896f3a"^^xsd:string ;
+	props:hasCompressedGuid "0MHc5V191EpOGaKprRYMyw"^^xsd:string ;
+	bot:hasSpace inst:space_980 ;
+	bot:containsElement inst:element_10738 ;
+	bot:containsElement inst:element_10807 ;
+	bot:containsElement inst:element_10876 ;
+	bot:containsElement inst:element_12663 ;
+	bot:containsElement inst:element_12815 ;
+	bot:containsElement inst:element_20213 ;
+	bot:containsElement inst:element_20317 ;
+	props:Name "02_WV_Tweede Verdieping"^^xsd:string ;
+	props:Aboveground "UNKNOWN"^^xsd:string ;
+	props:Name "02_WV_Tweede Verdieping"^^xsd:string ;
+	props:Category "Levels"^^xsd:string ;
+	props:Elevation "5400.0"^^xsd:double ;
+	props:ComputationHeight "1500.0"^^xsd:double ;
+	props:Structural "False"^^xsd:boolean ;
+	props:BuildingStory "True"^^xsd:boolean ;
+	props:Name "02_WV_Tweede Verdieping"^^xsd:string ;
+	props:Category "Levels"^^xsd:string ;
+	props:Family "Level"^^xsd:string ;
+	props:FamilyName "Level"^^xsd:string . 
+
+inst:space_191
+	a bot:Space ;
+	rdfs:label "03"^^xsd:string ;
+	bot:hasGuid "770957ba9d9645938134b6c1c172bbbc"^^xsd:string ;
+	props:hasCompressedGuid "1t2LUwdPP5au4qji71Shky"^^xsd:string ;
+	props:Name "Dinner Room"^^xsd:string ;
+	props:Name "Dinner Room"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Reference "Dinner Room 03"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Netfloorarea "10.976249999999963"^^xsd:double ;
+	props:Height "2500.0"^^xsd:double ;
+	props:Grossperimeter "13399.99999999998"^^xsd:double ;
+	props:Grossfloorarea "10.976249999999963"^^xsd:double ;
+	props:Grossvolume "27.440624999999912"^^xsd:double ;
+	props:BaseOffset "0.0"^^xsd:double ;
+	props:Level "00_Begane Grond"^^xsd:string ;
+	props:LimitOffset "0.0"^^xsd:double ;
+	props:UpperLimit "01_WV_Slab Lower Edge"^^xsd:string ;
+	props:Area "10.976249999999963"^^xsd:double ;
+	props:ComputationHeight "1500.0"^^xsd:double ;
+	props:Perimeter "13399.999999999982"^^xsd:double ;
+	props:UnboundedHeight "2500.0"^^xsd:double ;
+	props:Volume "27.440624999999912"^^xsd:double ;
+	props:SpaceType "Rijwoning-Occupied"^^xsd:string ;
+	props:Name "Dinner Room"^^xsd:string ;
+	props:Number "03"^^xsd:string ;
+	props:RoomName "Dining Room"^^xsd:string ;
+	props:RoomNumber "3"^^xsd:string ;
+	props:Phase "Bestaand"^^xsd:string . 
+
+inst:space_312
+	a bot:Space ;
+	rdfs:label "04"^^xsd:string ;
+	bot:hasGuid "770957ba9d9645938134b6c1c172bbba"^^xsd:string ;
+	props:hasCompressedGuid "1t2LUwdPP5au4qji71Shkw"^^xsd:string ;
+	props:Name "Kitchen"^^xsd:string ;
+	props:Name "Kitchen"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Reference "Kitchen 04"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Netfloorarea "6.827499999999984"^^xsd:double ;
+	props:Height "2500.0"^^xsd:double ;
+	props:Grossperimeter "10700.000000000005"^^xsd:double ;
+	props:Grossfloorarea "6.827499999999984"^^xsd:double ;
+	props:Grossvolume "17.068749999999962"^^xsd:double ;
+	props:BaseOffset "0.0"^^xsd:double ;
+	props:LimitOffset "0.0"^^xsd:double ;
+	props:UpperLimit "01_WV_Slab Lower Edge"^^xsd:string ;
+	props:Level "00_Begane Grond"^^xsd:string ;
+	props:Area "6.827499999999984"^^xsd:double ;
+	props:ComputationHeight "1500.0"^^xsd:double ;
+	props:Perimeter "10700.00000000001"^^xsd:double ;
+	props:UnboundedHeight "2500.0"^^xsd:double ;
+	props:Volume "17.068749999999955"^^xsd:double ;
+	props:Zone "Default"^^xsd:string ;
+	props:Name "Kitchen"^^xsd:string ;
+	props:Number "04"^^xsd:string ;
+	props:RoomName "Kitchen"^^xsd:string ;
+	props:RoomNumber "4"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:PhaseId "8665"^^xsd:string ;
+	props:Phase "Bestaand"^^xsd:string . 
+
+inst:space_420
+	a bot:Space ;
+	rdfs:label "02"^^xsd:string ;
+	bot:hasGuid "770957ba9d9645938134b6c1c172bbb8"^^xsd:string ;
+	props:hasCompressedGuid "1t2LUwdPP5au4qji71Shku"^^xsd:string ;
+	props:Name "Living"^^xsd:string ;
+	props:Name "Living"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Reference "Living 02"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Netfloorarea "24.647619502505435"^^xsd:double ;
+	props:Height "2500.0"^^xsd:double ;
+	props:Grossperimeter "23874.999999999884"^^xsd:double ;
+	props:Grossfloorarea "24.647619502505435"^^xsd:double ;
+	props:Grossvolume "61.619048756263595"^^xsd:double ;
+	props:BaseOffset "0.0"^^xsd:double ;
+	props:LimitOffset "0.0"^^xsd:double ;
+	props:UpperLimit "01_WV_Slab Lower Edge"^^xsd:string ;
+	props:Level "00_Begane Grond"^^xsd:string ;
+	props:Area "24.647619502505435"^^xsd:double ;
+	props:ComputationHeight "1500.0"^^xsd:double ;
+	props:Perimeter "23874.999999999887"^^xsd:double ;
+	props:UnboundedHeight "2500.0"^^xsd:double ;
+	props:Volume "61.61904875626357"^^xsd:double ;
+	props:Phase "Bestaand"^^xsd:string . 
+
+inst:space_515
+	a bot:Space ;
+	rdfs:label "01"^^xsd:string ;
+	bot:hasGuid "770957ba9d9645938134b6c1c172bbb6"^^xsd:string ;
+	props:hasCompressedGuid "1t2LUwdPP5au4qji71Shks"^^xsd:string ;
+	props:Name "Entrance"^^xsd:string ;
+	props:Name "Entrance"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Reference "Entrance 01"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Netfloorarea "3.341843749999983"^^xsd:double ;
+	props:Height "2500.0"^^xsd:double ;
+	props:Grossperimeter "8267.888736053514"^^xsd:double ;
+	props:Grossfloorarea "3.341843749999983"^^xsd:double ;
+	props:Grossvolume "8.354609374999958"^^xsd:double ;
+	props:BaseOffset "0.0"^^xsd:double ;
+	props:LimitOffset "0.0"^^xsd:double ;
+	props:UpperLimit "01_WV_Slab Lower Edge"^^xsd:string ;
+	props:Level "00_Begane Grond"^^xsd:string ;
+	props:Area "3.341843749999983"^^xsd:double ;
+	props:ComputationHeight "1500.0"^^xsd:double ;
+	props:Perimeter "8152.888736053517"^^xsd:double ;
+	props:UnboundedHeight "2500.0"^^xsd:double ;
+	props:Volume "8.354609374999962"^^xsd:double ;
+	props:Phase "Bestaand"^^xsd:string . 
+
+inst:space_603
+	a bot:Space ;
+	rdfs:label "09"^^xsd:string ;
+	bot:hasGuid "770957ba9d9645938134b6c1c172ba54"^^xsd:string ;
+	props:hasCompressedGuid "1t2LUwdPP5au4qji71ShfK"^^xsd:string ;
+	props:Name "Room 1"^^xsd:string ;
+	props:Name "Room 1"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Reference "Room 1 09"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Netfloorarea "15.087578050295638"^^xsd:double ;
+	props:Height "2500.0"^^xsd:double ;
+	props:Grossperimeter "15570.575560300009"^^xsd:double ;
+	props:Grossfloorarea "15.087578050295638"^^xsd:double ;
+	props:Grossvolume "37.7189451257391"^^xsd:double ;
+	props:BaseOffset "0.0"^^xsd:double ;
+	props:LimitOffset "0.0"^^xsd:double ;
+	props:Level "01_WV_Eerste Verdieping"^^xsd:string ;
+	props:UpperLimit "02_WV_Slab Lower Edge"^^xsd:string ;
+	props:Area "15.087578050295638"^^xsd:double ;
+	props:ComputationHeight "1500.0"^^xsd:double ;
+	props:Perimeter "15570.575560300013"^^xsd:double ;
+	props:UnboundedHeight "2500.0"^^xsd:double ;
+	props:Volume "37.7189451257391"^^xsd:double ;
+	props:Phase "Bestaand"^^xsd:string . 
+
+inst:space_693
+	a bot:Space ;
+	rdfs:label "08"^^xsd:string ;
+	bot:hasGuid "770957ba9d9645938134b6c1c172ba53"^^xsd:string ;
+	props:hasCompressedGuid "1t2LUwdPP5au4qji71ShfJ"^^xsd:string ;
+	props:Name "Bathroom"^^xsd:string ;
+	props:Name "Bathroom"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Reference "Bathroom 08"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Netfloorarea "7.480124999999918"^^xsd:double ;
+	props:Height "2500.0"^^xsd:double ;
+	props:Grossperimeter "11114.999999999938"^^xsd:double ;
+	props:Grossfloorarea "7.480124999999918"^^xsd:double ;
+	props:Grossvolume "18.7003124999998"^^xsd:double ;
+	props:BaseOffset "0.0"^^xsd:double ;
+	props:LimitOffset "0.0"^^xsd:double ;
+	props:UpperLimit "02_WV_Slab Lower Edge"^^xsd:string ;
+	props:Level "01_WV_Eerste Verdieping"^^xsd:string ;
+	props:Area "7.480124999999918"^^xsd:double ;
+	props:ComputationHeight "1500.0"^^xsd:double ;
+	props:Perimeter "11114.999999999942"^^xsd:double ;
+	props:UnboundedHeight "2500.0"^^xsd:double ;
+	props:Volume "18.7003124999998"^^xsd:double ;
+	props:Phase "Bestaand"^^xsd:string . 
+
+inst:space_778
+	a bot:Space ;
+	rdfs:label "10"^^xsd:string ;
+	bot:hasGuid "770957ba9d9645938134b6c1c172ba51"^^xsd:string ;
+	props:hasCompressedGuid "1t2LUwdPP5au4qji71ShfH"^^xsd:string ;
+	props:Name "Room 2"^^xsd:string ;
+	props:Name "Room 2"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Reference "Room 2 10"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Netfloorarea "14.750834449704271"^^xsd:double ;
+	props:Height "2500.0"^^xsd:double ;
+	props:Grossperimeter "15385.424439699944"^^xsd:double ;
+	props:Grossfloorarea "14.750834449704271"^^xsd:double ;
+	props:Grossvolume "36.877086124260686"^^xsd:double ;
+	props:BaseOffset "0.0"^^xsd:double ;
+	props:LimitOffset "0.0"^^xsd:double ;
+	props:UpperLimit "02_WV_Slab Lower Edge"^^xsd:string ;
+	props:Level "01_WV_Eerste Verdieping"^^xsd:string ;
+	props:Area "14.750834449704271"^^xsd:double ;
+	props:ComputationHeight "1500.0"^^xsd:double ;
+	props:Perimeter "15385.424439699947"^^xsd:double ;
+	props:UnboundedHeight "2500.0"^^xsd:double ;
+	props:Volume "36.877086124260686"^^xsd:double ;
+	props:Phase "Bestaand"^^xsd:string . 
+
+inst:space_863
+	a bot:Space ;
+	rdfs:label "11"^^xsd:string ;
+	bot:hasGuid "770957ba9d9645938134b6c1c172ba4f"^^xsd:string ;
+	props:hasCompressedGuid "1t2LUwdPP5au4qji71ShfF"^^xsd:string ;
+	props:Name "Room 3"^^xsd:string ;
+	props:Name "Room 3"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Reference "Room 3 11"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Netfloorarea "6.633749999999914"^^xsd:double ;
+	props:Height "2500.0"^^xsd:double ;
+	props:Grossperimeter "10374.999999999936"^^xsd:double ;
+	props:Grossfloorarea "6.633749999999914"^^xsd:double ;
+	props:Grossvolume "16.58437499999979"^^xsd:double ;
+	props:BaseOffset "0.0"^^xsd:double ;
+	props:LimitOffset "0.0"^^xsd:double ;
+	props:UpperLimit "02_WV_Slab Lower Edge"^^xsd:string ;
+	props:Level "01_WV_Eerste Verdieping"^^xsd:string ;
+	props:Area "6.633749999999914"^^xsd:double ;
+	props:ComputationHeight "1500.0"^^xsd:double ;
+	props:Perimeter "10374.99999999994"^^xsd:double ;
+	props:UnboundedHeight "2500.0"^^xsd:double ;
+	props:Volume "16.58437499999979"^^xsd:double ;
+	props:Phase "Bestaand"^^xsd:string . 
+
+inst:space_980
+	a bot:Space ;
+	rdfs:label "12"^^xsd:string ;
+	bot:hasGuid "770957ba9d9645938134b6c1c172ba1d"^^xsd:string ;
+	props:hasCompressedGuid "1t2LUwdPP5au4qji71SheT"^^xsd:string ;
+	props:Name "Roof"^^xsd:string ;
+	props:Name "Roof"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Reference "Roof 12"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Netfloorarea "26.853335878641815"^^xsd:double ;
+	props:Height "2438.4"^^xsd:double ;
+	props:Grossfloorarea "26.853335878641815"^^xsd:double ;
+	props:Grossvolume "65.47917420648021"^^xsd:double ;
+	props:BaseOffset "0.0"^^xsd:double ;
+	props:Level "02_WV_Tweede Verdieping"^^xsd:string ;
+	props:LimitOffset "2438.4"^^xsd:double ;
+	props:UpperLimit "02_WV_Tweede Verdieping"^^xsd:string ;
+	props:Area "26.853335878641815"^^xsd:double ;
+	props:ComputationHeight "1500.0"^^xsd:double ;
+	props:Perimeter "20951.11195954726"^^xsd:double ;
+	props:UnboundedHeight "2438.4"^^xsd:double ;
+	props:Volume "57.93345801280856"^^xsd:double ;
+	props:Phase "Bestaand"^^xsd:string . 
+
+inst:space_1073
+	a bot:Space ;
+	rdfs:label "06"^^xsd:string ;
+	bot:hasGuid "238c282698904f278fd122598521fc17"^^xsd:string ;
+	props:hasCompressedGuid "0ZZ2Wcc91F9u$H8bc58VmN"^^xsd:string ;
+	props:Name "Stairs"^^xsd:string ;
+	props:Name "Stairs"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Reference "Stairs 06"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Netfloorarea "2.982163728456369"^^xsd:double ;
+	props:Height "2438.4"^^xsd:double ;
+	props:Grossperimeter "8254.11384101414"^^xsd:double ;
+	props:Grossfloorarea "2.982163728456369"^^xsd:double ;
+	props:Grossvolume "7.27170803546801"^^xsd:double ;
+	props:BaseOffset "0.0"^^xsd:double ;
+	props:LimitOffset "2438.4"^^xsd:double ;
+	props:Level "00_Begane Grond"^^xsd:string ;
+	props:UpperLimit "00_Begane Grond"^^xsd:string ;
+	props:UnboundedHeight "2438.4"^^xsd:double ;
+	props:Area "2.982163728456369"^^xsd:double ;
+	props:ComputationHeight "1500.0"^^xsd:double ;
+	props:Perimeter "8073.33464101414"^^xsd:double ;
+	props:Volume "7.271708035468008"^^xsd:double ;
+	props:Phase "Bestaand"^^xsd:string . 
+
+inst:space_1157
+	a bot:Space ;
+	rdfs:label "05"^^xsd:string ;
+	bot:hasGuid "238c282698904f278fd122598521fc11"^^xsd:string ;
+	props:hasCompressedGuid "0ZZ2Wcc91F9u$H8bc58VmH"^^xsd:string ;
+	props:Name "Toilet"^^xsd:string ;
+	props:Name "Toilet"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Reference "Toilet 05"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Netfloorarea "0.9249999999999711"^^xsd:double ;
+	props:Height "2438.4"^^xsd:double ;
+	props:Grossperimeter "3849.999999999939"^^xsd:double ;
+	props:Grossfloorarea "0.9249999999999711"^^xsd:double ;
+	props:Grossvolume "2.2555199999999296"^^xsd:double ;
+	props:BaseOffset "0.0"^^xsd:double ;
+	props:LimitOffset "2438.4"^^xsd:double ;
+	props:UpperLimit "00_Begane Grond"^^xsd:string ;
+	props:Level "00_Begane Grond"^^xsd:string ;
+	props:UnboundedHeight "2438.4"^^xsd:double ;
+	props:Area "0.9249999999999711"^^xsd:double ;
+	props:ComputationHeight "1500.0"^^xsd:double ;
+	props:Perimeter "3849.999999999939"^^xsd:double ;
+	props:Volume "2.255519999999931"^^xsd:double ;
+	props:Phase "Bestaand"^^xsd:string . 
+
+inst:space_1240
+	a bot:Space ;
+	rdfs:label "07"^^xsd:string ;
+	bot:hasGuid "238c282698904f278fd122598521fc1f"^^xsd:string ;
+	props:hasCompressedGuid "0ZZ2Wcc91F9u$H8bc58VmV"^^xsd:string ;
+	props:Name "Stairs"^^xsd:string ;
+	props:Name "Stairs"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Reference "Stairs 07"^^xsd:string ;
+	props:Category "Spaces"^^xsd:string ;
+	props:Netfloorarea "5.215500000000031"^^xsd:double ;
+	props:Height "2438.4"^^xsd:double ;
+	props:Grossperimeter "9135.000000000025"^^xsd:double ;
+	props:Grossfloorarea "5.215500000000031"^^xsd:double ;
+	props:Grossvolume "12.717475200000075"^^xsd:double ;
+	props:BaseOffset "0.0"^^xsd:double ;
+	props:LimitOffset "2438.4"^^xsd:double ;
+	props:Level "01_WV_Eerste Verdieping"^^xsd:string ;
+	props:UpperLimit "01_WV_Eerste Verdieping"^^xsd:string ;
+	props:UnboundedHeight "2438.4"^^xsd:double ;
+	props:Area "5.215500000000031"^^xsd:double ;
+	props:ComputationHeight "1500.0"^^xsd:double ;
+	props:Perimeter "9135.000000000025"^^xsd:double ;
+	props:Volume "12.717475200000072"^^xsd:double ;
+	props:Phase "Bestaand"^^xsd:string . 
+
+    inst:element_1550
+	a bot:Element ;
+	a dpp:Element ;
+	rdfs:label "Basic Wall:NLRS_22_WA_250mm:830959"^^xsd:string ;
+	bot:hasGuid "af013f6d0dda43c9a60c475962980abf"^^xsd:string ;
+	props:hasCompressedGuid "2l0Jzj3Tf3oQOCHrbYc0g$"^^xsd:string ;
+	props:Roughness "1"^^xsd:int ;
+	props:Absorptance "0.1"^^xsd:double ;
+	props:HeatTransferCoefficient "4.2901740926527"^^xsd:double ;
+	props:ThermalMass "342.3535"^^xsd:double ;
+	props:ThermalResistance "0.23309077403469194"^^xsd:double ;
+	props:Function "Interior"^^xsd:string ;
+	props:Width "250.00000000000003"^^xsd:double ;
+	props:WrappingAtEnds "None"^^xsd:string ;
+	props:WrappingAtInserts "Do not wrap"^^xsd:string ;
+	props:CoarseScaleFillPattern "<Solid fill>"^^xsd:string ;
+	props:CoarseScaleFillColor "8421504"^^xsd:int ;
+	props:AssemblyDescription ""^^xsd:string ;
+	props:AssemblyCode "2E(42.11)"^^xsd:string ;
+	props:Description "stucwerk interieur, fijn, wit"^^xsd:string ;
+	props:Keynote "d-27,5-000"^^xsd:string ;
+	props:TypeComments "d=27,5mm"^^xsd:string ;
+	props:TypeName "NLRS_22_WA_250mm"^^xsd:string ;
+	props:StructuralMaterial "NLRS_f2_beton_prefab_gen"^^xsd:string ;
+	props:Category "Walls"^^xsd:string ;
+	props:FamilyName "Basic Wall"^^xsd:string ;
+	props:Cost "0.0"^^xsd:double ;
+	props:Family "Basic Wall"^^xsd:string ;
+	props:FamilyAndType "Basic Wall: NLRS_22_WA_250mm"^^xsd:string ;
+	props:Type "NLRS_22_WA_250mm"^^xsd:string ;
+	props:TypeId "860905"^^xsd:string ;
+	props:Roughness "304.8"^^xsd:double ;
+	props:Category "Walls"^^xsd:string ;
+	props:Description "stucwerk interieur, fijn, wit"^^xsd:string ;
+	props:Reference "NLRS_22_WA_250mm"^^xsd:string ;
+	props:Thermaltransmittance "4.2901740926527"^^xsd:double ;
+	props:Isexternal "False"^^xsd:boolean ;
+	props:Loadbearing "False"^^xsd:boolean ;
+	props:Reference "NLRS_22_WA_250mm"^^xsd:string ;
+	props:Extendtostructure "False"^^xsd:boolean ;
+	props:Height "2500.0"^^xsd:double ;
+	props:Length "2762.4999999999914"^^xsd:double ;
+	props:Width "250.00000000000003"^^xsd:double ;
+	props:Grossfootprintarea "0.6906249999999963"^^xsd:double ;
+	props:Grossvolume "1.7265624999999947"^^xsd:double ;
+	props:Grosssidearea "6.906249999999979"^^xsd:double ;
+	props:Netsidearea "6.906249999999979"^^xsd:double ;
+	props:Netvolume "1.7265624999999944"^^xsd:double ;
+	props:BaseOffset "0.0"^^xsd:double ;
+	props:RelatedToMass "False"^^xsd:boolean ;
+	props:RoomBounding "True"^^xsd:boolean ;
+	props:BaseConstraint "00_Begane Grond"^^xsd:string ;
+	props:BaseExtensionDistance "0.0"^^xsd:double ;
+	props:BaseIsAttached "False"^^xsd:boolean ;
+	props:LocationLine "Core Centerline"^^xsd:string ;
+	props:TopConstraint "Up to level: 01_WV_Slab Lower Edge"^^xsd:string ;
+	props:TopExtensionDistance "0.0"^^xsd:double ;
+	props:TopIsAttached "False"^^xsd:boolean ;
+	props:TopOffset "0.0"^^xsd:double ;
+	props:UnconnectedHeight "2500.0"^^xsd:double ;
+	props:Cross-Section "Vertical"^^xsd:string ;
+	props:Area "6.906249999999979"^^xsd:double ;
+	props:Length "2802.499999999991"^^xsd:double ;
+	props:Thickness "250.00000000000006"^^xsd:double ;
+	props:Volume "1.7265624999999944"^^xsd:double ;
+	props:PhaseCreated "Bestaand"^^xsd:string ;
+	props:Structural "False"^^xsd:boolean ;
+	props:StructuralUsage "Non-bearing"^^xsd:string ;
+	props:NLSfB "22"^^xsd:string ; #
+	props:Reference "NLRS_22_WA_250mm"^^xsd:string ;
+	rdfs:hasName "Basic wall prefab"^^xsd:string ; #
+	rdfs:hasDescription "basic wall prefab met blokverband"^^xsd:string ; #
+    dpp:hasLength [a quantitykind:Lenght; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;#
+    dpp:hasWidth [a quantitykind:Width; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;#
+    dpp:hasHeight [a quantitykind:Height; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;#
+    prov:hasCompletionDate "2022-11-11T15:30:00"^^xsd:dateTime ; #
+    rdfs:hasAngle "0.0"^^xsd:decimal ; #
+    dpp:hasWarranty "100 days"^^xsd:string ; #
+    dpp:hasServicelife "50"^^xsd:integer ; 	 #
+	dpp:hasClassificationCode inst:ElementNEN2767_4_001 ; 
+	dpp:hasProduct inst:Concrete_001 .	
+
+#NEN2767_4 object.......................................................................................................................................
+
+inst:ElementNEN2767_4_001
+    a dpp:classificationCode  ;
+    dpp:hasClassificationCode "306"^^xsd:string ;#
+	dpp:hasDecompositionLevel  "EL"^^xsd:string .#
+ #.................................................................................................
+
+ inst:element_18178
+	a bot:Element ;
+	a dpp:Element ;
+	rdfs:label "Doors_ExtSgl_3:1010x2110mm:878657"^^xsd:string ;
+	bot:hasGuid "c12424869424436498b32c6163e797d2"^^xsd:string ;
+	props:hasCompressedGuid "3192I6b2H3P9YpB65ZvvVI"^^xsd:string ;
+	props:SolarHeatGainCoefficient "0.0"^^xsd:double ;
+	props:VisualLightTransmittance "0.0"^^xsd:double ;
+	props:DefineThermalPropertiesBy "User Defined"^^xsd:string ;
+	props:AnalyticConstruction "<None>"^^xsd:string ;
+	props:HeatTransferCoefficient "3.7"^^xsd:double ;
+	props:ThermalResistance "0.27027027027027023"^^xsd:double ;
+	props:DontChange-PanelWidth "182.33333333333334"^^xsd:double ;
+	props:DoorPanelHeight "2000.0000000000002"^^xsd:double ;
+	props:DoorPanelWidth "907.0"^^xsd:double ;
+	props:Function "Exterior"^^xsd:string ;
+	props:WallClosure "By host"^^xsd:string ;
+	props:WrapLayersFromExt "102.5"^^xsd:double ;
+	props:WrapLayersFromExt "177.50000000000003"^^xsd:double ;
+	props:CavityCloserDepth "85.0"^^xsd:double ;
+	props:CavityCloserOffsetFromExt "102.5"^^xsd:double ;
+	props:CavityCloserWidth "50.0"^^xsd:double ;
+	props:CillExtension "25.0"^^xsd:double ;
+	props:CillProjection "30.0"^^xsd:double ;
+	props:CillThickness "54.50000000000001"^^xsd:double ;
+	props:DoorPanelThickness "44.0"^^xsd:double ;
+	props:Framedepth "89.0"^^xsd:double ;
+	props:Frameoffset-External "25.0"^^xsd:double ;
+	props:Framewidth "42.0"^^xsd:double ;
+	props:GlazingThickness "24.0"^^xsd:double ;
+	props:HandleXDistance "75.0"^^xsd:double ;
+	props:HandleZDistance "1000.0000000000001"^^xsd:double ;
+	props:Height "2110.0"^^xsd:double ;
+	props:OAFrameWidth "64.0"^^xsd:double ;
+	props:RoughHeight "2110.0"^^xsd:double ;
+	props:RoughWidth "1010.0"^^xsd:double ;
+	props:StileBottomRail "175.0"^^xsd:double ;
+	props:StileHanging "90.0"^^xsd:double ;
+	props:StileIntermediateFrieze "80.0"^^xsd:double ;
+	props:StileLockRail "175.0"^^xsd:double ;
+	props:StileMuntinRail "90.0"^^xsd:double ;
+	props:StileShutting "90.0"^^xsd:double ;
+	props:StileTopOfFriezeRail "1650.0"^^xsd:double ;
+	props:StileTopOfLockRail "1000.0000000000001"^^xsd:double ;
+	props:StileTopRail "150.0"^^xsd:double ;
+	props:StructuralTolerance "6.500000000000001"^^xsd:double ;
+	props:Thickness "44.0"^^xsd:double ;
+	props:Tolerance "3.0"^^xsd:double ;
+	props:Undercut "4.0"^^xsd:double ;
+	props:Width "1010.0"^^xsd:double ;
+	props:VisIronmongery "True"^^xsd:boolean ; 
+	props:VisCavityClosers "True"^^xsd:boolean ;
+	props:AssemblyDescription ""^^xsd:string ;
+	props:AssemblyCode ""^^xsd:string ;
+	props:CodeName ""^^xsd:string ;
+	props:OmniclassNumber ""^^xsd:string ;
+	props:OmniclassTitle ""^^xsd:string ;
+	props:Keynote "L20"^^xsd:string ;
+	props:TypeComments "External Single"^^xsd:string ;
+	props:TypeMark "12"^^xsd:string ;
+	props:TypeName "1010x2110mm"^^xsd:string ;
+	props:MaterialDoor "Door - Panel"^^xsd:string ;
+	props:MaterialFrame "Door - Frame/Mullion"^^xsd:string ;
+	props:MaterialIronmongery "Door - Handle"^^xsd:string ;
+	props:Category "Doors"^^xsd:string ;
+	props:FamilyName "Doors_ExtSgl_3"^^xsd:string ;
+	props:Paneloperation "SWINGING"^^xsd:string ;
+	props:Panelposition "NOTDEFINED"^^xsd:string ;
+	props:Isexternal "True"^^xsd:boolean ;
+	props:Thermaltransmittance "3.7"^^xsd:double ;
+	props:Reference "1010x2110mm"^^xsd:string ;
+	props:Category "Doors"^^xsd:string ;
+	props:Framedepth "89.0"^^xsd:double ;
+	props:Reference "1010x2110mm"^^xsd:string ;
+	props:Height "2110.0"^^xsd:double ;
+	props:Width "1010.0"^^xsd:double ;
+	props:Area "2.1311"^^xsd:double ;
+	props:Level "00_Begane Grond"^^xsd:string ;
+	props:SillHeight "0.0"^^xsd:double ;
+	props:Area "3.1499040882717715"^^xsd:double ;
+	props:Volume "0.10794101428352627"^^xsd:double ;
+	props:Mark "17"^^xsd:string ;
+	props:Category "Doors"^^xsd:string ;
+	props:Family "Doors_ExtSgl_3"^^xsd:string ;
+	props:FamilyAndType "Doors_ExtSgl_3: 1010x2110mm"^^xsd:string ;
+	props:HostId "854387"^^xsd:string ;
+	props:Type "1010x2110mm"^^xsd:string ;
+	props:TypeId "841973"^^xsd:string ;
+	props:HeadHeight "2110.0"^^xsd:double ;
+	props:PhaseCreated "Bestaand"^^xsd:string ;
+	props:NLSfB "31"^^xsd:string ; #
+    rdfs:hasName "Basic door"^^xsd:string ; #
+	rdfs:hasDescription "basic door"^^xsd:string ;  #
+    dpp:hasLength [a quantitykind:Lenght; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;#
+    dpp:hasWidth [a quantitykind:Width; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;#
+    dpp:hasHeight [a quantitykind:Height; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;#
+    prov:hasCompletionDate "2014-10-11T15:30:00"^^xsd:dateTime ; 
+    rdfs:hasAngle "0.0"^^xsd:decimal ;  #
+    dpp:hasWarranty "100 days"^^xsd:string ;  #
+    dpp:hasServicelife "50"^^xsd:integer ; #
+	dpp:hasClassificationCode inst:ElementNEN2767_4_002 ; 
+	dpp:hasProduct inst:Door_001 . 
+
+#NEN2767_4 object.......................................................................................................................................
+
+inst:ElementNEN2767_4_002
+    a dpp:classificationCode  ;
+    dpp:hasClassificationCode "306"^^xsd:string ;  #
+	dpp:hasDecompositionLevel  "EL"^^xsd:string . #
+
+#.......................................................................................................
+
+
+inst:element_18504
+	a bot:Element ;
+    a dpp:Element ;
+	rdfs:label "Windows_Concept_Plain_Sgl:2416x1900mm:880971"^^xsd:string ;
+	bot:hasGuid "c12424869424436498b32c6163e78ed8"^^xsd:string ; 
+	props:hasCompressedGuid "3192I6b2H3P9YpB65ZvuxO"^^xsd:string ;
+	props:AnalyticConstruction "<None>"^^xsd:string ;
+	props:DefineThermalPropertiesBy "User Defined"^^xsd:string ;
+	props:HeatTransferCoefficient "2.9"^^xsd:double ;
+	props:SolarHeatGainCoefficient "0.86"^^xsd:double ;
+	props:ThermalResistance "0.3448275862068966"^^xsd:double ;
+	props:VisualLightTransmittance "0.9"^^xsd:double ;
+	props:WallClosure "By host"^^xsd:string ;
+	props:DefaultHeadHeight "2110.0"^^xsd:double ;
+	props:FrameoffsetExternal "0.0"^^xsd:double ; #
+	props:Height "1900.0000000000002"^^xsd:double ;
+	props:RoughHeight "1900.0000000000002"^^xsd:double ;
+	props:RoughWidth "2416.0"^^xsd:double ;
+	props:Width "2416.0"^^xsd:double ;
+	props:AssemblyDescription ""^^xsd:string ;
+	props:AssemblyCode ""^^xsd:string ;
+	props:CodeName ""^^xsd:string ;
+	props:OmniclassNumber ""^^xsd:string ;
+	props:OmniclassTitle ""^^xsd:string ;
+	props:Keynote "L10"^^xsd:string ;
+	props:Manufacturer "Revit"^^xsd:string ;
+	props:TypeMark "36"^^xsd:string ;
+	props:TypeName "2416x1900mm"^^xsd:string ;
+	props:MaterialFrame "Window Frame"^^xsd:string ;
+	props:MaterialGlass "Glass"^^xsd:string ;
+	props:MaterialTrim "Window Frame"^^xsd:string ;
+	props:Category "Windows"^^xsd:string ;
+	props:FamilyName "Windows_Concept_Plain_Sgl"^^xsd:string ;
+	props:Manufacturer "Revit"^^xsd:string ;
+	props:Category "Windows"^^xsd:string ;
+	props:Isexternal "False"^^xsd:boolean ;
+	props:Thermaltransmittance "2.9"^^xsd:double ;
+	props:Reference "2416x1900mm"^^xsd:string ;
+	props:Reference "2416x1900mm"^^xsd:string ;
+	props:Height "1900.0000000000002"^^xsd:double ;
+	props:Width "2416.0"^^xsd:double ;
+	props:Area "4.5904"^^xsd:double ;
+	props:Level "00_Begane Grond"^^xsd:string ;
+	props:SillHeight "400.0"^^xsd:double ;
+	props:Area "6.864514857621268"^^xsd:double ;
+	props:FrameArea "0.45904000000000006"^^xsd:double ;
+	props:GlassArea "4.13136"^^xsd:double ;
+	props:Volume "0.1726426875324518"^^xsd:double ;
+	props:Mark "49"^^xsd:string ;
+	props:Category "Windows"^^xsd:string ;
+	props:Family "Windows_Concept_Plain_Sgl"^^xsd:string ;
+	props:FamilyAndType "Windows_Concept_Plain_Sgl: 2416x1900mm"^^xsd:string ;
+	props:Type "2416x1900mm"^^xsd:string ;
+	props:TypeId "880748"^^xsd:string ;
+	props:HostId "855375"^^xsd:string ;
+	props:HeadHeight "2300.0"^^xsd:double ;
+	props:PhaseCreated "Bestaand"^^xsd:string ;
+	props:NLSfB "31"^^xsd:string ; #
+    rdfs:hasName "Basic wall prefab"^^xsd:string ; #
+	rdfs:hasDescription "basic window"^^xsd:string ; #
+    dpp:hasLength [a quantitykind:Lenght; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ; #
+    dpp:hasWidth [a quantitykind:Width; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ; #
+    dpp:hasHeight [a quantitykind:Height; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ; #
+    prov:hasCompletionDate "2014-11-11T15:30:00"^^xsd:dateTime ; #
+    rdfs:hasAngle "0.0"^^xsd:decimal ; #
+    dpp:hasWarranty "150 days"^^xsd:string ; # 
+    dpp:hasServicelife "50"^^xsd:integer ; #
+	dpp:hasClassificationCode inst:ElementNEN2767_4_002 ; 
+	dpp:hasProduct inst:Wood_001 ; 
+	dpp:hasProduct inst:Window_001 . 
+
+#NEN2767_4 object.......................................................................................................................................
+
+inst:ElementNEN2767_4_003
+    a dpp:classificationCode  ;
+    dpp:hasClassificationCode "306"^^xsd:string ; 
+	dpp:hasDecompositionLevel  "EL"^^xsd:string .
+

@@ -1,0 +1,544 @@
+# baseURI: http://linkedbuildingdata.net/ifc/resources20240415_100608/
+
+@prefix inst: <http://linkedbuildingdata.net/ifc/resources20240415_100608/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix bot:  <https://w3id.org/bot#> .
+@prefix beo:  <https://pi.pauwel.be/voc/buildingelement#> .
+@prefix mep:  <https://pi.pauwel.be/voc/distributionelement#> .
+@prefix props: <https://w3id.org/props#> .
+@prefix dpp: <https://jannekebosma.com/dpp#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix bcao: <https://github.com/linmor-sys/BCAO.owl#> . #niet beschikbaar
+@prefix bpo: <https://w3id.org/bpo#> .
+@prefix bmp: <https://w3id.org/bmp#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+
+
+
+
+#..Material info.. ............................................................................................................
+
+inst:Cement_001
+    a dpp:material ;
+    a prov:entity ; 
+    dpp:hasGuid "Cement_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasManufacturerNumber "123456"^^xsd:string ;
+    rdfs:hasName "Cement"^^xsd:string ;
+    rdfs:hasDescription "Cement used in concrete"^^xsd:string ;
+    dpp:hasLength [a quantitykind:Lenght; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;
+    dpp:hasWidth [a quantitykind:Width; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;
+    dpp:hasHeight [a quantitykind:Height; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;
+    dpp:hasCriticality "false"^^xsd:boolean ;
+    dpp:hasSecondary "true"^^xsd:boolean ; 
+    rdfs:hasDensity "0.5"^^xsd:decimal ; #search real numbers
+    prov:hasCompletionDate "2014-10-09T15:30:00"^^xsd:dateTime ; #prov
+    dpp:hasServicelife "50"^^xsd:integer ; 
+    dpp:hasWarranty "30 days"^^xsd:string ;
+    dpp:hasClassificationCode inst:MaterialNEN2767_4_001 ;
+    dpp:hasCircularityPropertySet inst:MaterialCircularityPropertySet_001 ;
+    bmp:hasManufacturer inst:MaterialManufacturer_001 .
+
+inst:ConcreteSand_001
+    a dpp:material ;
+    a prov:entity ;
+    dpp:hasGuid "ConcreteSand_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasManufacturerNumber "123456"^^xsd:string ;
+    rdfs:hasName "Concrete sand"^^xsd:string ;
+    rdfs:hasDescription "Sand used in concrete"^^xsd:string ;
+    dpp:hasLength [a quantitykind:Lenght; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;
+    dpp:hasWidth [a quantitykind:Width; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;
+    dpp:hasHeight [a quantitykind:Height; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;
+    dpp:hasCriticality "true"^^xsd:boolean ;
+    dpp:hasSecondary "false"^^xsd:boolean ; 
+    rdfs:hasDensity "0.4"^^xsd:decimal ; #search realistic number
+    prov:hasCompletionDate "2014-11-05T15:30:00"^^xsd:dateTime ;
+    dpp:hasServicelife "100"^^xsd:integer; 
+    dpp:hasWarranty "30 days"^^xsd:string ;
+    dpp:hasClassificationCode inst:MaterialNEN2767_4_002 ;
+    dpp:hasCircularityPropertySet inst:MaterialCircularityPropertySet_002 ;
+    bmp:hasManufacturer inst:MaterialManufacturer_002 .
+
+inst:Wood_001 
+    a dpp:material ;
+    a prov:entity ; 
+    dpp:hasGuid "wood_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasManufacturerNumber "123456"^^xsd:string ;
+    rdfs:hasName "Raw wood"^^xsd:string ;
+    rdfs:hasDescription "Used in door"^^xsd:string ;
+    dpp:hasLength [a quantitykind:Lenght; qudt:quantityValue "10"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;
+    dpp:hasWidth [a quantitykind:Width; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;
+    dpp:hasHeight [a quantitykind:Height; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;
+    dpp:hasCriticality "false"^^xsd:boolean ;
+    dpp:hasSecondary "false"^^xsd:boolean ; 
+    rdfs:hasDensity "0.5"^^xsd:decimal ; #search for realistic numbers
+    prov:hasCompletionDate "2014-11-11T15:30:00"^^xsd:dateTime ;
+    dpp:hasServicelife "50"^^xsd:integer; 
+    dpp:hasWarranty "30 days"^^xsd:string ;
+    dpp:hasClassificationCode inst:MaterialNEN2767_4_003 ;
+    dpp:hasCircularityPropertySet inst:MaterialCircularityPropertySet_003 ; 
+    bmp:hasManufacturer inst:MaterialManufacturer_003 .
+
+inst:Glass_001 
+    a dpp:material ;
+    a prov:entity ; 
+    dpp:hasGuid "Glass_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasManufacturerNumber "123456"^^xsd:string ;
+    rdfs:hasName "glass"^^xsd:string ;
+    rdfs:hasDescription "Glass used in window"^^xsd:string ;
+    dpp:hasLength [a quantitykind:Lenght; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;
+    dpp:hasWidth [a quantitykind:Width; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;
+    dpp:hasHeight [a quantitykind:Height; qudt:quantityValue "0"^^xsd:decimal; qudt:applicableUnit unit:MilliM] ;
+    dpp:hasCriticality "false"^^xsd:boolean ;
+    dpp:hasSecondary "false"^^xsd:boolean ; 
+    rdfs:hasDensity "0.5"^^xsd:decimal ; #search for realistic number 
+    prov:hasCompletionDate "2010-11-11T15:30:00"^^xsd:dateTime ;
+    dpp:hasServicelife "100"^^xsd:integer ;
+    dpp:hasWarranty "30 days"^^xsd:string ; 
+    dpp:hasClassificationCode inst:MaterialNEN2767_4_004 ;
+    dpp:hasCircularityPropertySet inst:MaterialCircularityPropertySet_004 ; 
+    bmp:hasManufacturer inst:MaterialManufacturer_004 .
+
+#NEN2767_4 classificationcode .......................................................................................................................................
+
+inst:MaterialNEN2767_4_001
+    a dpp:classificationCode ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasClassificationCode "93"^^xsd:string ;
+	dpp:hasDecompositionLevel "MAT"^^xsd:string .
+
+inst:MaterialNEN2767_4_002
+    a dpp:classificationCode ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasClassificationCode "32"^^xsd:string ;
+    dpp:hasDecompositionLevel "MAT"^^xsd:string . 
+
+inst:MaterialNEN2767_4_003
+    a dpp:classificationCode ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasClassificationCode "2"^^xsd:string ; 
+    dpp:hasDecompositionLevel "MAT"^^xsd:string . 
+
+inst:MaterialNEN2767_4_004
+    a dpp:classificationCode ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasClassificationCode "5"^^xsd:string ; 
+    dpp:hasDecompositionLevel "MAT"^^xsd:string . 
+
+
+
+#....Manufacturer....................................................................................................................................................
+
+inst:MaterialManufacturer_001
+    a bmp:manufacturer ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    bmp:hasManufacturerName "Cement manufacturer"^^xsd:string ;
+    bmp:hasManufacturerContactEmail "Cementcompanyfrans@gmail.com"^^xsd:string ;
+    locn:fullAddress "x"^^xsd:string ;                                                       
+    rdfs:hasDescription "Manufacturer cement"^^xsd:string .
+
+inst:MaterialManufacturer_002
+    a bmp:manufacturer ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    bmp:hasManufacturerName "Sand manufacturer"^^xsd:string ;
+    bmp:hasManufacturerContactEmail "sandcompanyAnne@gmail.com"^^xsd:string ;
+    locn:fullAddress "x"^^xsd:string ;
+    rdfs:hasDescription "Manufacturer sand, filters sand"^^xsd:string .
+
+inst:MaterialManufacturer_003
+    a bmp:manufacturer ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    bmp:hasManufacturerName "wood manufacturer"^^xsd:string ;
+    bmp:hasManufacturerContactEmail "woodcompanyMario@gmail.com"^^xsd:string ;
+    locn:fullAddress "x"^^xsd:string ;
+    rdfs:hasDescription "Manufacturer wood"^^xsd:string .
+
+inst:MaterialManufacturer_004
+    a bmp:manufacturer ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    bmp:hasManufacturerName "glass manufacturer"^^xsd:string ;
+    bmp:hasManufacturerContactEmail "glasscompanyMario@gmail.com"^^xsd:string ;
+    locn:fullAddress "x"^^xsd:string ;
+    rdfs:hasDescription "Manufacturer glass"^^xsd:string .
+
+#..circularity prop set......................................................................................................................................................................
+
+inst:MaterialCircularityPropertySet_001
+    a dpp:CircularityPropertySet ;                                               
+    dpp:hasName "Circularity property set Cement001abc234 "^^xsd:string ; 
+    dpp:hasGuid "MaterialCircularityPropertySet_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasOrigin inst:MaterialOrigin_001 ;
+    dpp:hasConditionAssessment inst:MaterialConditionAssessment_001 ;
+    dpp:hasFutureFunction inst:MaterialFutureFunction_001 ;
+    dpp:hasRecyclingPotential inst:MaterialRecyclingPotential_001 ;
+    dpp:hasLog inst:MaterialLog_001 ;
+    dpp:hasReusabilityPotential inst:MaterialReusabilityPotential_001 . 
+
+inst:MaterialCircularityPropertySet_002
+    a dpp:CircularityPropertySet ;
+    dpp:hasName "MaterialCircularityPropertySet_002"^^xsd:string ; 
+    dpp:hasGuid "CircularitySand001w123"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasOrigin inst:MaterialOrigin_002 ;
+    dpp:hasConditionAssessment inst:MaterialConditionAssessment_002 ;
+    dpp:hasFutureFunction inst:MaterialFutureFunction_002 ;
+    dpp:hasRecyclingPotential inst:MaterialRecyclingPotential_002 ;
+    dpp:hasLog inst:MaterialLog_002 ;
+    dpp:hasReusabilityPotential inst:MaterialReusabilityPotential_002 . 
+
+inst:MaterialCircularityPropertySet_003
+    a dpp:CircularityPropertySet ;
+    dpp:hasName "Circularity property set wood001abc234"^^xsd:string ; 
+    dpp:hasGuid "MaterialCircularityPropertySet_003"^^xsd:string ; 
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasOrigin inst:MaterialOrigin_003 ;
+    dpp:hasConditionAssessment inst:MaterialConditionAssessment_003 ;
+    dpp:hasFutureFunction inst:MaterialFutureFunction_003 ;
+    dpp:hasRecyclingPotential inst:MaterialRecyclingPotential_003 ;
+    dpp:hasLog inst:MaterialLog_003 ;
+    dpp:hasReusabilityPotential inst:MaterialReusabilityPotential_003 . 
+
+inst:MaterialCircularityPropertySet_004
+    a dpp:CircularityPropertySet ;
+    dpp:hasName "Circularity property set glass001abc456"^^xsd:string ; 
+    dpp:hasGuid "MaterialCircularityPropertySet_004"^^xsd:string ; 
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasOrigin inst:MaterialOrigin_004 ;
+    dpp:hasConditionAssessment inst:MaterialConditionAssessment_004 ;
+    dpp:hasFutureFunction inst:MaterialFutureFunction_004 ;
+    dpp:hasRecyclingPotential inst:MaterialRecyclingPotential_004 ;
+    dpp:hasLog inst:MaterialLog_004 ;
+    dpp:hasReusabilityPotential inst:MaterialReusabilityPotential_004 .  
+
+#Log...................................................................................................................................................................
+
+inst:MaterialLog_001
+    a dpp:log ;
+    a dpp:CircularityPropertySet ; 
+    dpp:hasGuid "Materiallog_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasLinkDatabase "www.onlinelink.nl"^^xsd:string;
+    dpp:hasVersion "1.0"^^xsd:string ;
+    dpp:hasOwner inst:MaterialOwner_001 .
+
+inst:MaterialLog_002
+    a dpp:log ;
+    a dpp:CircularityPropertySet ; 
+    dpp:hasGuid "Materiallog_002"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasLinkDatabase "www.onlinelink.nl"^^xsd:string;
+    dpp:hasVersion "1.5"^^xsd:string ;
+    dpp:hasOwner inst:MaterialOwner_001 .
+
+inst:MaterialLog_003
+    a dpp:log ;
+    a dpp:CircularityPropertySet ; 
+    dpp:hasGuid "Materiallog_003"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasLinkDatabase "www.onlinelink.nl"^^xsd:string;
+    dpp:hasVersion "1.0"^^xsd:string ;
+    dpp:hasOwner inst:MaterialOwner_001 .
+
+inst:MaterialLog_004
+    a dpp:log ;
+    a dpp:CircularityPropertySet ; 
+    dpp:hasGuid "Materiallog_004"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasLinkDatabase "www.onlinelink.nl"^^xsd:string;
+    dpp:hasVersion "3.0"^^xsd:string ;
+    dpp:hasOwner inst:MaterialOwner_001 .
+
+
+#Log owner...................................................................................................................................................................
+
+inst:MaterialOwner_001
+    a dpp:owner ;
+    a dpp:CircularityPropertySet ; 
+    dpp:hasGuid "MaterialOwner_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasName "Gerard van Velden"^^xsd:string .
+
+#origin...................................................................................................................................................................
+
+inst:MaterialOrigin_001
+    a dpp:origin ;
+    a dpp:CircularityPropertySet ; 
+    dpp:hasGuid "MaterialOrigin_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasCountryOrigin "Germany"^^xsd:string .
+
+inst:MaterialOrigin_002
+    a dpp:CircularityPropertySet ; 
+    a dpp:origin ; 
+    dpp:hasGuid "MaterialOrigin_002"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasCountryOrigin "Germany"^^xsd:string .
+
+inst:MaterialOrigin_003
+    a dpp:CircularityPropertySet ; 
+    a dpp:origin ; 
+    dpp:hasGuid "MaterialOrigin_003"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasCountryOrigin "Belgium"^^xsd:string .
+
+inst:MaterialOrigin_004
+    a dpp:CircularityPropertySet ; 
+    a dpp:origin ; 
+    dpp:hasGuid "MaterialOrigin_004"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasCountryOrigin "The Netherlands"^^xsd:string .
+
+#...condition assessment.........................................................................................................................................
+
+inst:MaterialConditionAssessment_001
+    a dpp:conditionAssessment ;
+    a dpp:CircularityPropertySet ; 
+    a prov:entity ;  
+    dpp:hasGuid "MaterialConditionAssessment_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasVersion "1"^^xsd:string ;
+    dpp:hasLastUpdate "Used in Concrete mixture 1"^^xsd:string ;
+    prov:atTime "2022-11-11T15:30:00"^^xsd:dateTime ; #klopt dit
+    dpp:hasConditionAssessment "See document 123"^^xsd:string .
+
+inst:MaterialConditionAssessment_002
+    a dpp:CircularityPropertySet ; 
+    a dpp:conditionAssessment ; 
+    a prov:entity ; 
+    dpp:hasGuid "MaterialConditionAssessment_002"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasVersion "1"^^xsd:string ;
+    dpp:hasLastUpdate "Used in Concrete mixture 1"^^xsd:string ;
+    prov:atTime "2022-11-11T15:30:00"^^xsd:dateTime ;
+    dpp:hasConditionAssessment "See document 1233"^^xsd:string .
+
+inst:MaterialConditionAssessment_003
+    a dpp:CircularityPropertySet ; 
+    a dpp:conditionAssessment ; 
+    a prov:entity ; 
+    dpp:hasGuid "MaterialConditionAssessment_003"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasVersion "0"^^xsd:string ;
+    dpp:hasLastUpdate "No update"^^xsd:string ;
+    prov:atTime "2022-11-11T15:30:00"^^xsd:dateTime ; 
+    dpp:hasConditionAssessment "See document 135"^^xsd:string .
+
+inst:MaterialConditionAssessment_004
+    a dpp:CircularityPropertySet ; 
+    a dpp:conditionAssessment ; 
+    a prov:entity ; 
+    dpp:hasGuid "MaterialConditionAssessment_004"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasVersion "0"^^xsd:string ;
+    dpp:hasLastUpdate "No update"^^xsd:string ;
+    prov:atTime "2022-11-11T15:30:00"^^xsd:dateTime ; #check ontology
+    dpp:hasConditionAssessment "See document 135"^^xsd:string . 
+
+#....Future function..................................................................................................................................................
+
+inst:MaterialFutureFunction_001
+    a dpp:CircularityPropertySet ; 
+    a dpp:futureFunction ;
+    dpp:hasGuid "MaterialFutureFunction_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasFutureFunction "Product level Concrete"^^xsd:string .
+   # dpp:hasReusabilityPotential inst:MaterialReusabilityPotential_001 ; 
+   # dpp:hasRecylingPotential inst:MaterialRecyclingPotential_001 .
+
+inst:MaterialFutureFunction_002
+    a dpp:CircularityPropertySet ;
+    a dpp:futureFunction ;
+    dpp:hasGuid "MaterialFutureFunction_002"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasFutureFunction "Element level Tiles"^^xsd:string .
+  #  dpp:hasReusabilityPotential inst:MaterialReusabilityPotential_002 ; 
+   # dpp:hasRecylingPotential inst:MaterialRecyclingPotential_002 .
+
+inst:MaterialFutureFunction_003
+    a dpp:CircularityPropertySet ; 
+    a dpp:futureFunction ; 
+    dpp:hasGuid "MaterialFutureFunction_003"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasFutureFunction "Reuse productlevel"^^xsd:string .
+    #dpp:hasReusabilityPotential inst:MaterialReusabilityPotential_003 ; 
+    #dpp:hasRecylingPotential inst:MaterialRecyclingPotential_003 .
+
+inst:MaterialFutureFunction_004
+    a dpp:CircularityPropertySet ;
+    a dpp:futureFunction ; 
+    dpp:hasGuid "MaterialFutureFunction_004"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasFutureFunction "Reuse productlevel"^^xsd:string .
+    #dpp:hasReusabilityPotential inst:MaterialReusabilityPotential_003 ; 
+    #dpp:hasRecylingPotential inst:MaterialRecyclingPotential_004 .
+
+#..reusabilityPotential.........................................................................................................................................
+
+
+inst:MaterialReusabilityPotential_001
+    a dpp:CircularityPropertySet ; 
+    a dpp:reusabilityPotential ; 
+    dpp:hasGuid "MaterialReusabilityPotential_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasReusabilityPotential "1.00"^^xsd:decimal ;
+    dpp:hasEmbodiedEnergy "9"^^xsd:integer ;   #verander getallen naar realistisch
+    dpp:hasProofOfReuse inst:MaterialProofOfReuse_001 ;
+    dpp:hasDisassemblyPotential inst:MaterialDisassemblyPotential_001 . 
+
+inst:MaterialReusabilityPotential_002
+    a dpp:CircularityPropertySet ; 
+    a dpp:reusabilityPotential ; 
+    dpp:hasGuid "MaterialReusabilityPotential_002"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasReusabilityPotential "2.00"^^xsd:decimal ;
+    dpp:hasEmbodiedEnergy "1"^^xsd:integer ; #check getallen of realistisch is
+    dpp:hasProofOfReuse inst:MaterialProofOfReuse_002 ;
+    dpp:hasDisassemblyPotential inst:MaterialDisassemblyPotential_002 . 
+
+inst:MaterialReusabilityPotential_003
+    a dpp:CircularityPropertySet ; 
+    a dpp:reusabilityPotential ; 
+    dpp:hasGuid "MaterialReusabilityPotential_003"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasReusabilityPotential "3.00"^^xsd:decimal ; #check realistisch getal
+    dpp:hasEmbodiedEnergy "5"^^xsd:integer ;
+    dpp:hasProofOfReuse inst:MaterialProofOfReuse_003 ;
+    dpp:hasDisassemblyPotential inst:MaterialDisassemblyPotential_003 . 
+
+inst:MaterialReusabilityPotential_004
+    a dpp:CircularityPropertySet ; 
+    a dpp:reusabilityPotential ; 
+    dpp:hasGuid "MaterialReusabilityPotential_004"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasReusabilityPotential "3.00"^^xsd:decimal ; #check realistisch getal
+    dpp:hasEmbodiedEnergy "5"^^xsd:integer ;
+    dpp:hasProofOfReuse inst:MaterialProofOfReuse_004 ;
+    dpp:hasDisassemblyPotential inst:MaterialDisassemblyPotential_004 . 
+
+
+ #...RecyclingPotential..........................................................................................................................................
+
+inst:MaterialRecyclingPotential_001
+    a dpp:CircularityPropertySet ; 
+    a dpp:recyclingPotential ;
+    dpp:hasGuid "MaterialRecyclingPotential_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasRecyclingPotential "0.1"^^xsd:decimal ;   #deze getallen realistisch maken
+    dpp:hasEmbodiedEnergy "5"^^xsd:integer ;
+    dpp:hasProofOfReuse inst:MaterialProofOfReuse_001 ;
+    dpp:hasDisassemblyPotential inst:MaterialDisassemblyPotential_001 .
+
+inst:MaterialRecyclingPotential_002
+    a dpp:CircularityPropertySet ; 
+    a dpp:recyclingPotential ; 
+    dpp:hasGuid "MaterialRecyclingPotential_002"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasRecyclingPotential "0.2"^^xsd:decimal ;
+    dpp:hasEmbodiedEnergy "1"^^xsd:integer ; #realistic numbers
+    dpp:hasProofOfReuse inst:MaterialProofOfReuse_002 ;
+    dpp:hasDisassemblyPotential inst:MaterialDisassemblyPotential_002 .
+
+inst:MaterialRecyclingPotential_003
+    a dpp:CircularityPropertySet ;
+    a dpp:recyclingpotential ;
+    dpp:hasGuid "MaterialRecyclingPotential_003"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasRecyclingPotential "0.8"^^xsd:decimal ;
+    dpp:hasEmbodiedEnergy "5"^^xsd:integer ; #search for realistic numbers
+    dpp:hasProofOfReuse inst:MaterialProofOfReuse_003 ;
+    dpp:hasDisassemblyPotential inst:MaterialDisassemblyPotential_003 .
+
+inst:MaterialRecyclingPotential_004
+    a dpp:CircularityPropertySet ;
+    a dpp:recyclingpotential ;
+    dpp:hasGuid "MaterialRecyclingPotential_004"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasRecyclingPotential "0.8"^^xsd:decimal ;
+    dpp:hasEmbodiedEnergy "5"^^xsd:integer ; #search for realistic numbers
+    dpp:hasProofOfReuse inst:MaterialProofOfReuse_004 ;
+    dpp:hasDisassemblyPotential inst:MaterialDisassemblyPotential_004 .
+
+#..proofofreuse..........................................................................................................................................................
+
+inst:MaterialProofOfReuse_001
+    a dpp:proofOfReuse ;
+    dpp:hasGuid "MaterialAssurance_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasDescription "Assurance given for reuse concrete"^^xsd:string ;
+    dpp:hasProofAvailable "true"^^xsd:boolean ;
+    dpp:hasExternalParty inst:MaterialExternalParty_001 .
+
+inst:MaterialProofOfReuse_002
+    a dpp:proofOfReuse ;
+    dpp:hasGuid "MaterialAssurance_002"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasDescription "Assurance given for reuse concrete"^^xsd:string ;
+    dpp:hasProofAvailable "true"^^xsd:boolean ;
+    dpp:hasExternalParty inst:MaterialExternalParty_001 .
+
+inst:MaterialProofOfReuse_003
+    a dpp:proofOfReuse ; 
+    dpp:hasGuid "MaterialAssurance_003"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasDescription "Proof for reuse door is not provided"^^xsd:string ;
+    dpp:hasProofAvailable "false"^^xsd:boolean ;
+    dpp:hasExternalParty inst:MaterialExternalParty_001 .
+
+inst:MaterialProofOfReuse_004
+    a dpp:proofOfReuse ; 
+    dpp:hasGuid "MaterialAssurance_004"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasDescription "Proof for reuse window is not provided"^^xsd:string ;
+    dpp:hasProofAvailable "false"^^xsd:boolean ;
+    dpp:hasExternalParty inst:MaterialExternalParty_001 .
+
+#..external party.........................................................................................................................................................
+
+inst:MaterialExternalParty_001
+    a dpp:externalParty ;
+    dpp:hasGuid "Materialexternalparty_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasName "Company netjes"^^xsd:string .
+
+    #....DisassemblyPotential...........................................................................................................................................
+
+inst:MaterialDisassemblyPotential_001
+    a dpp:disassemblyPotential ; 
+    dpp:hasGuid "MaterialDisassemblyPotential_001"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasDescription "No disassembly. Demolish"^^xsd:string ;
+    dpp:hasDisassemblyPotential "1.5"^^xsd:decimal .   #check numbers
+
+inst:MaterialDisassemblyPotential_002
+    a dpp:disassemblyPotential ;
+    dpp:hasGuid "MaterialDisassemblyPotential_002"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasDescription "No disassembly. Demolish"^^xsd:string ;
+    dpp:hasDisassemblyPotential "1.5"^^xsd:decimal .
+
+inst:MaterialDisassemblyPotential_003
+    a dpp:disassemblyPotential ; 
+    dpp:hasGuid "MaterialDisassemblyPotential_003"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasDescription "See productlevel"^^xsd:string ;
+    dpp:hasDisassemblyPotential "1.00"^^xsd:decimal . #check numbers   
+
+inst:MaterialDisassemblyPotential_004
+    a dpp:disassemblyPotential ; 
+    dpp:hasGuid "MaterialDisassemblyPotential_004"^^xsd:string ;
+	props:hasCompressedGuid "test123"^^xsd:string ;
+    dpp:hasDescription "See productlevel"^^xsd:string ;
+    dpp:hasDisassemblyPotential "1.00"^^xsd:decimal . #check numbers   

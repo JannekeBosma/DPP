@@ -1,0 +1,1024 @@
+@prefix inst: <http://linkedbuildingdata.net/ifc/resources20240411_123900/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix bot:  <https://w3id.org/bot#> .
+@prefix beo:  <https://pi.pauwel.be/voc/buildingelement#> .
+@prefix mep:  <https://pi.pauwel.be/voc/distributionelement#> .
+@prefix props: <https://w3id.org/props#> .
+@prefix dpp: <https://jannekebosma.com/dpp#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix bcao: <https://github.com/linmor-sys/BCAO.owl#> . 
+@prefix bpo: <https://w3id.org/bpo#> .
+@prefix bmp: <https://placeholder> . 
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+#material info................................................................................................................................................................
+dpp:MaterialShape_info
+    a sh:NodeShape ;
+    sh:targetClass dpp:material ;
+    sh:property [
+        sh:path dpp:hasGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path props:hasCompressedGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path dpp:hasManufacturerNumber ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path rdfs:hasName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path rdfs:hasDescription ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path dpp:hasLength ;
+        sh:node [
+            a sh:NodeShape ;
+            sh:property [
+                sh:path qudt:quantityValue ;
+                sh:datatype xsd:decimal ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+            sh:property [
+                sh:path qudt:applicableUnit ;
+                sh:node [
+                    sh:in (unit:MilliM) ;  
+                ] ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+        ] ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    # sh:property [
+    #     sh:path [ sh:alternativePath (dpp:hasLength props:length)  ] ;
+    #     sh:or (
+    #        [ sh:datatype xsd:decimal ]
+    #        [ sh:datatype xsd:double ]
+    #     );
+    #     sh:minCount 1 ;
+    #     sh:maxCount 1 ;
+    #     sh:minLength 1 ;
+    # ] ;
+
+    sh:property [
+        sh:path dpp:hasWidth ;
+        sh:node [
+            a sh:NodeShape ;
+            sh:property [
+                sh:path qudt:quantityValue ;
+                sh:datatype xsd:decimal ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+            sh:property [
+                sh:path qudt:applicableUnit ;
+                sh:node [
+                    sh:in (unit:MilliM) ;  
+                ] ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+        ] ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    # sh:property [
+    #     sh:path [ sh:alternativePath (dpp:hasWidth props:width)  ] ;
+    #     sh:or (
+    #        [ sh:datatype xsd:decimal ]
+    #        [ sh:datatype xsd:double ]
+    #     );
+    #     sh:minCount 1 ;
+    #     sh:maxCount 1 ;
+    #     sh:minLength 1 ;
+    # ] ;
+    sh:property [
+        sh:path dpp:hasHeight ;
+        sh:node [
+            a sh:NodeShape ;
+            sh:property [
+                sh:path qudt:quantityValue ;
+                sh:datatype xsd:decimal ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+            sh:property [
+                sh:path qudt:applicableUnit ;
+                sh:node [
+                    sh:in (unit:MilliM) ;  
+                ] ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+        ] ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    # sh:property [
+    #     sh:path dpp:hasHeight ;
+    #     sh:datatype xsd:decimal ;
+    #     sh:minCount 1 ;
+    #     sh:maxCount 1 ;
+    #     sh:minLength 1 ;
+    # ] ;
+    sh:property [
+        sh:path dpp:hasCriticality ;
+        sh:datatype xsd:boolean ;
+        sh:in ( true false ) ;  
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path dpp:hasSecondary ;
+        sh:datatype xsd:boolean ;
+        sh:in ( true false) ;  
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path rdfs:hasDensity ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path dpp:hasWarranty ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path prov:hasCompletionDate ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$" ;
+        # sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$" ;
+    ] ;
+    sh:property [
+        sh:path dpp:hasServicelife ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] .
+
+    
+    
+#.....................................................................................................................
+#....Product level...................................................................
+
+dpp:ProductShape_info
+    a sh:NodeShape ;
+    sh:targetClass dpp:product ;
+    sh:property [
+        sh:path dpp:hasGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path props:hasCompressedGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path dpp:hasManufacturerNumber ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path rdfs:hasName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path rdfs:hasDescription ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path dpp:hasLength ;
+        sh:node [
+            a sh:NodeShape ;
+            sh:property [
+                sh:path qudt:quantityValue ;
+                sh:datatype xsd:decimal ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+            sh:property [
+                sh:path qudt:applicableUnit ;
+                sh:node [
+                    sh:in (unit:MilliM) ;  
+                ] ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+        ] ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    # sh:property [
+    #     sh:path [ sh:alternativePath (dpp:hasLength props:length)  ] ;
+    #     sh:or (
+    #        [ sh:datatype xsd:decimal ]
+    #        [ sh:datatype xsd:double ]
+    #     );
+    #     sh:minCount 1 ;
+    #     sh:maxCount 1 ;
+    #     sh:minLength 1 ;
+    # ] ;
+    sh:property [
+        sh:path dpp:hasWarranty ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+
+    sh:property [
+        sh:path dpp:hasWidth ;
+        sh:node [
+            a sh:NodeShape ;
+            sh:property [
+                sh:path qudt:quantityValue ;
+                sh:datatype xsd:decimal ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+            sh:property [
+                sh:path qudt:applicableUnit ;
+                sh:node [
+                    sh:in (unit:MilliM) ;  
+                ] ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+        ] ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+
+    # sh:property [
+    #     sh:path [ sh:alternativePath (dpp:hasWidth props:width)  ] ;
+    #     sh:or (
+    #        [ sh:datatype xsd:decimal ]
+    #        [ sh:datatype xsd:double ]
+    #     );
+    #     sh:minCount 1 ;
+    #     sh:maxCount 1 ;
+    #     sh:minLength 1 ;
+    # ] ;
+
+    # sh:property [
+    #     sh:path dpp:hasHeight ;
+    #     sh:datatype xsd:decimal ;
+    #     sh:minCount 1 ;
+    #     sh:maxCount 1 ;
+    #     sh:minLength 1 ;
+    # ] ;
+
+    sh:property [
+        sh:path dpp:hasHeight ;
+        sh:node [
+            a sh:NodeShape ;
+            sh:property [
+                sh:path qudt:quantityValue ;
+                sh:datatype xsd:decimal ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+            sh:property [
+                sh:path qudt:applicableUnit ;
+                sh:node [
+                    sh:in (unit:MilliM) ;  
+                ] ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+        ] ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path rdfs:hasAngle ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+
+    sh:property [
+        sh:path rdfs:hasDensity ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path prov:hasCompletionDate ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$" ;
+        # sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$" ;
+    ] ;
+    sh:property [
+        sh:path dpp:hasServicelife ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] .
+
+    
+    #...element shape..............................................................................................................................
+
+dpp:ElementShape_info
+    a sh:NodeShape ;
+    sh:targetClass bot:Element ;
+    sh:property [
+        sh:path [ sh:alternativePath (dpp:hasGuid bot:hasGuid)  ];
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path props:hasCompressedGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path rdfs:hasName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path rdfs:hasDescription ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path dpp:hasLength ;
+        sh:node [
+            a sh:NodeShape ;
+            sh:property [
+                sh:path qudt:quantityValue ;
+                sh:datatype xsd:decimal ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+            sh:property [
+                sh:path qudt:applicableUnit ;
+                sh:node [
+                    sh:in (unit:MilliM) ;  
+                ] ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+        ] ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    # sh:property [
+    #     sh:path [ sh:alternativePath (rdfs:hasLength props:length)  ] ;
+    #     sh:or (
+    #        [ sh:datatype xsd:decimal ]
+    #        [ sh:datatype xsd:double ]
+    #     );
+    #     sh:minCount 1 ;
+    #     sh:maxCount 1 ;
+    #     sh:minLength 1 ;
+    # ] ;
+    sh:property [
+        sh:path dpp:hasWarranty ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    # sh:property [
+    #     sh:path [ sh:alternativePath (rdfs:hasWidth props:width)  ] ;
+    #     sh:or (
+    #        [ sh:datatype xsd:decimal ]
+    #        [ sh:datatype xsd:double ]
+    #     );
+    #     sh:minCount 1 ;
+    #     sh:maxCount 1 ;
+    #     sh:minLength 1 ;
+    # ] ;
+    sh:property [
+        sh:path dpp:hasWidth ;
+        sh:node [
+            a sh:NodeShape ;
+            sh:property [
+                sh:path qudt:quantityValue ;
+                sh:datatype xsd:decimal ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+            sh:property [
+                sh:path qudt:applicableUnit ;
+                sh:node [
+                    sh:in (unit:MilliM) ;  
+                ] ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+        ] ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+
+    # sh:property [
+    #     sh:path rdfs:hasHeight ;
+    #     sh:datatype xsd:decimal ;
+    #     sh:minCount 1 ;
+    #     sh:maxCount 1 ;
+    #     sh:minLength 1 ;
+    # ] ;
+    sh:property [
+        sh:path dpp:hasHeight ;
+        sh:node [
+            a sh:NodeShape ;
+            sh:property [
+                sh:path qudt:quantityValue ;
+                sh:datatype xsd:decimal ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+            sh:property [
+                sh:path qudt:applicableUnit ;
+                sh:node [
+                    sh:in (unit:MilliM) ;  
+                ] ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+            ] ;
+        ] ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path rdfs:hasAngle ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path prov:hasCompletionDate ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$" ;
+        # sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$" ;
+    ] ;
+    sh:property [
+        sh:path dpp:hasServicelife ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] .
+
+
+
+    #.................................................................................................................................
+    #.......building/ (IFC).............................................................................................
+
+    dpp:BuildingShape_info
+    a sh:NodeShape ;
+    sh:targetClass bot:Building ;
+    sh:property [
+        sh:path [ sh:alternativePath (dpp:hasGuid bot:hasGuid)  ] ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path props:hasCompressedGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path props:BuildingName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+        sh:property [
+        sh:path props:ProjectAddress;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+        sh:property [
+        sh:path dpp:hasServicelife ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+        sh:maxlength 3 ;
+    ] ;
+    sh:property [
+        sh:path rdfs:hasDescription ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ; 
+    ] ;
+    sh:property [
+        sh:path prov:hasCompletionDate ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+        sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$" ;
+        # sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$" ;
+
+    ] .
+
+    # NEN.and NLSFB...............................................................................................................................................................................
+
+    dpp:Shape_Classification   
+    a sh:NodeShape ;
+    sh:targetClass dpp:classificationCode ;  
+
+   sh:property [
+        sh:path [ sh:alternativePath (dpp:hasClassificationCode props:NLSfB)  ] ;
+        sh:or (
+            [
+                sh:datatype xsd:string ;
+                sh:pattern "^[0-9]{1,4}$" ; 
+            ]
+            [
+                sh:datatype xsd:string ;
+                sh:pattern "^[a-zA-Z]{1,2}$" ;
+            ]
+            [
+                sh:datatype xsd:string ;
+                sh:pattern "^[A-Z][a-z][0-9]$" ;
+            ]
+            
+    );
+    sh:minCount 1 ;
+    sh:maxCount 1 ; 
+    ] ;
+
+    sh:property [
+        sh:path dpp:hasDecompositionLevel ;
+        sh:datatype xsd:string ;
+        sh:pattern "^(BO|EL|BD|MAT|bo|el|bd|mat|Object|Element|Bouwdeel|Materiaal|object|element|bouwdeel|materiaal|Bouwobject|bouwobjectl|constructievorm|productiemiddel|gebouwtype|gebouwtypen|woongebied|woongebieden|ruimte|ruimten)$" ; 
+        # sh:in ( "BO" "EL" "BD" "MAT" "bo" "el" "bd" "mat" "Object" "Element" "Bouwdeel" "Materiaal" "object" "element" "bouwdeel" "materiaal" "Bouwobject" "bouwobject") ;  
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] .
+
+    #Manufacturer................................................................................................
+
+    dpp:Shape_Manufacturer  
+    a sh:NodeShape ;
+    sh:targetClass bmp:manufacturer ;  
+
+    sh:property [
+        sh:path bmp:hasManufacturerName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 5 ;
+        sh:minLength 1 ;
+    ] ;
+
+    sh:property [
+        sh:path bmp:hasManufacturerContactEmail ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 5 ;
+        sh:pattern ".*@.*" ;  
+        sh:minLength 2 ;
+    ] ;
+
+    sh:property [
+        sh:path locn:fullAddress ; 
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+
+    sh:property [
+        sh:path rdfs:hasDescription ; #let op de xxxx
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] .
+
+    #material circularity property set..................................................................
+
+   # dpp:MaterialShape_CircularityPropertySet
+   # a sh:NodeShape ;
+  #  sh:targetClass dpp:CircularityPropertySet ;
+    
+  #  sh:property [
+  #      sh:path dpp:hasGuid ;
+  #      sh:minCount 1 ;
+   #     sh:minLength 1 ;
+
+   # ] ;
+   # sh:property [
+   #     sh:path dpp:hasName ;
+  #      sh:minCount 1 ;
+   #     sh:minLength 1 ;
+
+  #  ] .
+
+#Log ......................................................................
+
+# Definieer een SHACL-vorm om te controleren op de aanwezigheid van de klasse ex:Owner
+
+    dpp:Shape_log
+    a sh:NodeShape ;
+    sh:targetClass dpp:log ;
+
+    sh:property [
+        sh:path dpp:hasGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+        sh:property [
+        sh:path dpp:hasVersion ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+    
+     ] ;
+       
+        sh:property [
+        sh:path dpp:hasLinkDatabase ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+    
+     ] .
+
+
+
+#owner......................................................................................................
+    dpp:Shape_owner
+    a sh:NodeShape ;
+    sh:targetClass dpp:owner ;
+    
+    sh:property [
+        sh:path dpp:hasGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path dpp:hasName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] .
+
+#origin ................................................................................................
+
+    dpp:Shape_origin
+    a sh:NodeShape ;
+    sh:targetClass dpp:origin ;
+    
+    sh:property [
+        sh:path dpp:hasGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+
+    sh:property [
+        sh:path dpp:hasCountryOrigin ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:pattern "^(Afghanistan|the Netherlands|The Netherlands|the netherlands|germany|belgium|Albania|Algeria|Andorra|Angola|Antigua and Barbuda|Argentina|Armenia|Australia|Austria|Azerbaijan|Bahamas|Bahrain|Bangladesh|Barbados|Belarus|Belgium|Belize|Benin|Bhutan|Bolivia|Bosnia and Herzegovina|Botswana|Brazil|Brunei|Bulgaria|Burkina Faso|Burundi|Cabo Verde|Cambodia|Cameroon|Canada|Central African Republic|Chad|Chile|China|Colombia|Comoros|Congo (Congo-Brazzaville)|Costa Rica|Croatia|Cuba|Cyprus|Czechia (Czech Republic)|Denmark|Djibouti|Dominica|Dominican Republic|Ecuador|Egypt|El Salvador|Equatorial Guinea|Eritrea|Estonia|Eswatini|Swaziland|Ethiopia|Fiji|Finland|France|Gabon|Gambia|Georgia|Germany|Ghana|Greece|Grenada|Guatemala|Guinea|Guinea-Bissau|Guyana|Haiti|Holy See|Honduras|Hungary|Iceland|India|Indonesia|Iran|Iraq|Ireland|Israel|Italy|Ivory Coast|Jamaica|Japan|Jordan|Kazakhstan|Kenya|Kiribati|Kuwait|Kyrgyzstan|Laos|Latvia|Lebanon|Lesotho|Liberia|Libya|Liechtenstein|Lithuania|Luxembourg|Madagascar|Malawi|Malaysia|Maldives|Mali|Malta|Marshall Islands|Mauritania|Mauritius|Mexico|Micronesia|Moldova|Monaco|Mongolia|Montenegro|Morocco|Mozambique|Myanmar (formerly Burma)|Namibia|Nauru|Nepal|Netherlands|the Netherlands|The Netherlands|New Zealand|Nicaragua|Niger|Nigeria|North Korea|North Macedonia (formerly Macedonia)|Norway|Oman|Pakistan|Palau|Palestine State|Panama|Papua New Guinea|Paraguay|Peru|Philippines|Poland|Portugal|Qatar|Romania|Russia|Rwanda|Saint Kitts and Nevis|Saint Lucia|Saint Vincent and the Grenadines|Samoa|San Marino|Sao Tome and Principe|Saudi Arabia|Senegal|Serbia|Seychelles|Sierra Leone|Singapore|Slovakia|Slovenia|Solomon Islands|Somalia|South Africa|South Korea|South Sudan|Spain|Sri Lanka|Sudan|Suriname|Sweden|Switzerland|Syria|Tajikistan|Tanzania|Thailand|Timor-Leste|Togo|Tonga|Trinidad and Tobago|Tunisia|Turkey|Turkmenistan|Tuvalu|Uganda|Ukraine|United Arab Emirates|United Kingdom|United States of America|Uruguay|Uzbekistan|Vanuatu|Venezuela|Vietnam|Yemen|Zambia|Zimbabwe)$" ;
+        #sh:in (
+        #     "Afghanistan" "Albania" "Algeria" "Andorra" "Angola" "Antigua and Barbuda" "Argentina" "Armenia" "Australia" "Austria"
+        #     "Azerbaijan" "Bahamas" "Bahrain" "Bangladesh" "Barbados" "Belarus" "Belgium" "Belize" "Benin" "Bhutan" "Bolivia"
+        #     "Bosnia and Herzegovina" "Botswana" "Brazil" "Brunei" "Bulgaria" "Burkina Faso" "Burundi" "Cabo Verde" "Cambodia"
+        #     "Cameroon" "Canada" "Central African Republic" "Chad" "Chile" "China" "Colombia" "Comoros" "Congo (Congo-Brazzaville)"
+        #     "Costa Rica" "Croatia" "Cuba" "Cyprus" "Czechia (Czech Republic)" "Denmark" "Djibouti" "Dominica" "Dominican Republic"
+        #     "Ecuador" "Egypt" "El Salvador" "Equatorial Guinea" "Eritrea" "Estonia" "Eswatini" "Swaziland" "Ethiopia" "Fiji"
+        #     "Finland" "France" "Gabon" "Gambia" "Georgia" "Germany" "Ghana" "Greece" "Grenada" "Guatemala" "Guinea" "Guinea-Bissau"
+        #     "Guyana" "Haiti" "Holy See" "Honduras" "Hungary" "Iceland" "India" "Indonesia" "Iran" "Iraq" "Ireland" "Israel" "Italy"
+        #     "Ivory Coast" "Jamaica" "Japan" "Jordan" "Kazakhstan" "Kenya" "Kiribati" "Kuwait" "Kyrgyzstan" "Laos" "Latvia"
+        #     "Lebanon" "Lesotho" "Liberia" "Libya" "Liechtenstein" "Lithuania" "Luxembourg" "Madagascar" "Malawi" "Malaysia"
+        #     "Maldives" "Mali" "Malta" "Marshall Islands" "Mauritania" "Mauritius" "Mexico" "Micronesia" "Moldova" "Monaco"
+        #     "Mongolia" "Montenegro" "Morocco" "Mozambique" "Myanmar (formerly Burma)" "Namibia" "Nauru" "Nepal" "Netherlands"
+        #     "the Netherlands" "The Netherlands" "New Zealand" "Nicaragua" "Niger" "Nigeria" "North Korea" "North Macedonia (formerly Macedonia)"
+        #     "Norway" "Oman" "Pakistan" "Palau" "Palestine State" "Panama" "Papua New Guinea" "Paraguay" "Peru" "Philippines" "Poland"
+        #     "Portugal" "Qatar" "Romania" "Russia" "Rwanda" "Saint Kitts and Nevis" "Saint Lucia" "Saint Vincent and the Grenadines"
+        #     "Samoa" "San Marino" "Sao Tome and Principe" "Saudi Arabia" "Senegal" "Serbia" "Seychelles" "Sierra Leone" "Singapore"
+        #     "Slovakia" "Slovenia" "Solomon Islands" "Somalia" "South Africa" "South Korea" "South Sudan" "Spain" "Sri Lanka" "Sudan"
+        #     "Suriname" "Sweden" "Switzerland" "Syria" "Tajikistan" "Tanzania" "Thailand" "Timor-Leste" "Togo" "Tonga"
+        #     "Trinidad and Tobago" "Tunisia" "Turkey" "Turkmenistan" "Tuvalu" "Uganda" "Ukraine" "United Arab Emirates"
+        #     "United Kingdom" "United States of America" "Uruguay" "Uzbekistan" "Vanuatu" "Venezuela" "Vietnam" "Yemen" "Zambia" "Zimbabwe"
+        # ) ;
+        sh:minLength 1 ;
+    ] .
+
+    # Condition assessment..............................................................................................
+
+    dpp:Shape_ConditionAssessment
+    a sh:NodeShape ;
+    sh:targetClass dpp:conditionAssessment ;
+   
+    
+    sh:property [
+        sh:path dpp:hasGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+
+    ] ;
+    sh:property [
+        sh:path dpp:hasVersion ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+    
+     ] ;
+
+    sh:property [
+        sh:path dpp:hasLastUpdate ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+
+    ] ;
+
+     sh:property [
+        sh:path prov:atTime ;
+        sh:datatype xsd:dateTime ;
+        sh:pattern "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}$" ;
+        # sh:pattern "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}$" ;
+        sh:minCount 1 ;
+
+
+    ] ;
+
+         sh:property [
+        sh:path dpp:hasConditionAssessment ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+
+    ] .
+    
+    #future function.................................................................
+
+ 
+    dpp:Shape_FutureFunction
+    a sh:NodeShape ;
+    sh:targetClass dpp:futureFunction ;
+   
+    
+    sh:property [
+        sh:path dpp:hasGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+
+    ] ;
+    sh:property [
+        sh:path dpp:hasFutureFunction ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+    
+     ] .   
+
+     #reusability potential ................................................................
+
+      
+    dpp:Shape_ReusabilityPotential
+    a sh:NodeShape ;
+    sh:targetClass dpp:reusabilityPotential ;
+   
+    
+    sh:property [
+        sh:path dpp:hasGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+        sh:maxCount 1 ;
+
+    ] ;
+
+    sh:property [
+        sh:path dpp:hasReusabilityPotential ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+        sh:minInclusive 1.00 ;
+        sh:maxCount 1 ;
+    
+     ] ;
+
+         sh:property [
+        sh:path dpp:hasEmbodiedEnergy ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+        sh:maxCount 1 ;
+
+    ] .
+
+    #.recycling potential................................................................
+
+    dpp:Shape_RecyclingPotential
+    a sh:NodeShape ;
+    sh:targetClass dpp:recyclingPotential ;
+   
+    
+    sh:property [
+        sh:path dpp:hasGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+        sh:maxCount 1 ;
+
+    ] ;
+
+    sh:property [
+        sh:path dpp:hasRecyclingPotential ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+        sh:minInclusive 0.1 ;
+        sh:maxCount 1 ;
+    
+     ] ;
+
+         sh:property [
+        sh:path dpp:hasEmbodiedEnergy ;
+        sh:datatype xsd:integer ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+        sh:maxCount 1 ;
+
+    ] .
+
+    #assurance..................................................................
+
+    dpp:Shape_ProofOfReuse
+    a sh:NodeShape ;
+    sh:targetClass dpp:proofOfReuse ;
+   
+    
+    sh:property [
+        sh:path dpp:hasGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+        sh:maxCount 1 ;
+
+    ] ;
+
+    sh:property [
+        sh:path dpp:hasDescription ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+        sh:maxCount 1 ;
+    
+     ] ;
+
+         sh:property [
+        sh:path dpp:hasProofAvailable ;
+        sh:datatype xsd:boolean ;
+        sh:in ( true false) ; 
+        #sh:pattern "^(Yes|No|yes|no|)$" ; 
+        # sh:in ( "Yes" "No" "yes" "no" ) ;  
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+        sh:maxCount 1 ;
+
+     ].
+
+#External party.....................................................................................................
+    dpp:Shape_externalParty
+    a sh:NodeShape ;
+    sh:targetClass dpp:externalParty ;
+    
+    sh:property [
+        sh:path dpp:hasGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] ;
+    sh:property [
+        sh:path dpp:hasName ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:minLength 1 ;
+    ] .
+
+#disassembly potential.........................................................
+
+    dpp:Shape_DisassemblyPotential
+    a sh:NodeShape ;
+    sh:targetClass dpp:disassemblyPotential ;
+   
+    
+    sh:property [
+        sh:path dpp:hasGuid ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+        sh:maxCount 1 ;
+
+    ] ;
+
+    sh:property [
+        sh:path dpp:hasDescription ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+
+    
+     ] ;
+
+    sh:property [
+        sh:path dpp:hasDisassemblyPotential ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ;
+        sh:minLength 1 ;
+        sh:minInclusive 1 ;
+        sh:maxCount 1 ;
+    
+     ] .
