@@ -1,11 +1,11 @@
-# DPP
-An ontology for Digital Product Passports
+# DPP Ontology and Validation Process
+An ontology and validation process for Digital Product Passports
 
 In this folder you will find the DPP ontology and the needed files to validate Digital Product Passports (based on the DPP ontology).
 An explanation of all topics can be found in the Explanation folder. In this folder the third powerpoint presentation will show how the validation process should be run.
 The other PowerPoint presentations and the Thesis file are uploaded for explanatory purposes.
 
-
+# DPP Ontology structure 
 The structure of the DPP ontology data is visualized in the UML below
 ![image](https://github.com/JannekeBosma/DPP/assets/165405794/fb3c4fe9-40b5-4986-ba70-a64872b80c23)
 
