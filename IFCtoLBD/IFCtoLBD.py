@@ -1,3 +1,4 @@
+#Made by P. Pauwels (https://github.com/pipauwel/IFCtoLBD)
 from datetime import datetime
 import ifcopenshell as ios
 import Namespace
