@@ -14,6 +14,6 @@ In the visualization below DPP ontology classes are shown. Furthermore, alternat
 ![image](https://github.com/JannekeBosma/DPP/assets/165405794/65993bd5-7e0e-4e0f-9477-96d5414741f6)
 
 A-Box
-This visualization shows examples of the DPP ontology classes with belonging properties
+This visualization shows some of the instances that adhere to the ontology.
 ![image](https://github.com/JannekeBosma/DPP/assets/165405794/a6b1f598-6853-4957-a988-043db435b3fe)
 
